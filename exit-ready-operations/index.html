@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exit-Ready Operations: Build a service business that can thrive without you. Premium advisory for owners preparing for sale, succession, or step-back within 3–7 years.">
+    <meta name="author" content="Sarka Espinosa">
+    <title>Exit-Ready Operations | Sarka Espinosa</title>
+    
+    <meta property="og:title" content="Exit-Ready Operations">
+    <meta property="og:description" content="Systems, leadership, and customer experience designed so your business becomes a valuable, transferable asset.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sarka-ops.com/exit-ready-operations/">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f766e'/%3E%3Ctext x='50' y='65' font-size='48' font-family='system-ui' fill='white' text-anchor='middle' font-weight='700'%3ES%3C/text%3E%3C/svg%3E">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        .nav-link.active {
+            color: #0f766e;
+            font-weight: 500;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(90deg, #b45309, #d97706);
+            color: white;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .pillar-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+        
+        .text-gold {
+            color: #d97706;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-3">
+                    <a href="/" class="flex items-center gap-x-3">
+                        <div class="w-9 h-9 rounded-2xl bg-teal-800 flex items-center justify-center">
+                            <span class="text-white font-bold text-2xl tracking-tighter">S</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold tracking-tight text-xl">Sarka Espinosa</div>
+                            <div class="text-[10px] text-slate-500 -mt-1">STRATEGIC ADVISOR</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-9 text-sm">
+                    <a href="../index.html#services" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">How I Help</a>
+                    <a href="../index.html#about" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">About</a>
+                    <a href="../index.html#results" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">Results</a>
+                    <a href="../insights/" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">Insights</a>
+                    <a href="../index.html#contact" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+                    <select id="lang-select" class="text-sm border border-slate-300 rounded-xl px-2 py-1 bg-white focus:outline-none cursor-pointer">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="cz">CZ</option>
+                    </select>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-3">
+                    <button onclick="window.location.href='../index.html#contact'" 
+                            class="px-5 py-2 text-sm font-semibold text-teal-800 hover:text-teal-900 transition-colors">
+                        Get in touch
+                    </button>
+                    <button onclick="openBookingModalFromPage()" 
+                            class="px-5 py-2.5 bg-teal-800 hover:bg-teal-900 active:bg-teal-950 transition text-white text-sm font-semibold rounded-2xl">
+                        Book a call
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm">
+                <a href="../index.html#services" class="text-slate-600 hover:text-slate-900 py-1">How I Help</a>
+                <a href="../index.html#about" class="text-slate-600 hover:text-slate-900 py-1">About</a>
+                <a href="../index.html#results" class="text-slate-600 hover:text-slate-900 py-1">Results</a>
+                <a href="../insights/" class="text-slate-600 hover:text-slate-900 py-1">Insights</a>
+                <a href="../index.html#contact" class="text-slate-600 hover:text-slate-900 py-1">Contact</a>
+                <div class="py-1 flex items-center justify-between">
+                    <span class="text-slate-500 text-xs">Language</span>
+                    <select id="lang-select-mobile" class="text-sm border border-slate-300 rounded-xl px-2 py-1 bg-white">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="cz">CZ</option>
+                    </select>
+                </div>
+                <div class="pt-4 border-t flex flex-col gap-y-3">
+                    <button onclick="window.location.href='../index.html#contact'" class="text-left text-slate-600 hover:text-slate-900 py-1">Get in touch</button>
+                    <button onclick="openBookingModalFromPage()" class="w-full px-5 py-2.5 bg-teal-800 text-white text-sm font-semibold rounded-2xl">Book a 30-min call</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="pt-20 pb-14 md:pt-24 md:pb-16 bg-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-xs font-bold tracking-[1.5px] uppercase mb-6" data-i18n="exit.premium">
+                PREMIUM OFFERING
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-semibold tracking-tighter leading-none" data-i18n="exit.title">Exit-Ready Operations Audit + 90-Day Plan</h1>
+            
+            <p class="mt-6 text-2xl md:text-3xl text-slate-600 max-w-3xl mx-auto leading-tight" data-i18n="exit.subtitle">
+                I help ambitious owners of small-to-medium service businesses build operations that scale, perform at the highest level, and are fully prepared for exit or significant commercial growth.
+            </p>
+            
+            <p class="mt-4 text-xl font-semibold text-gold max-w-2xl mx-auto" data-i18n="exit.strong">
+                Avoid the common operational mistakes that destroy 30–50% of business value at exit.
+            </p>
+            
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openBookingModalFromPage()" 
+                        class="px-12 py-5 bg-teal-800 hover:bg-teal-900 text-white font-semibold rounded-2xl text-lg transition">
+                    Book a Strategy Call →
+                </button>
+                <a href="#framework" 
+                   class="px-9 h-14 border border-slate-300 hover:bg-slate-50 font-semibold rounded-2xl text-base flex items-center justify-center transition">
+                    See the framework
+                </a>
+            </div>
+            
+            <p class="mt-4 text-xs text-slate-500">For owners planning transition in 3–7 years</p>
+        </div>
+    </header>
+
+    <!-- THE PROGRAM -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="max-w-3xl">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="exit.program_label">THE PROGRAM</div>
+            <h2 class="text-3xl font-semibold tracking-tight" data-i18n="exit.program_title">The Exit-Ready Operations Audit + 90-Day Plan</h2>
+            
+            <p class="mt-4 text-lg text-slate-600" data-i18n="exit.program_desc">My flagship engagement. A focused, practical program that gives you clarity and momentum fast.</p>
+            
+            <ul class="mt-6 space-y-3 text-lg text-slate-600">
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.program.item1">Full operations audit focused on exit and commercial value</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.program.item2">Identification of the biggest valuation risks and opportunities</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.program.item3">Custom 90-Day Execution Plan with clear priorities and accountability</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.program.item4">Hands-on guidance to implement the highest-leverage fixes</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- WHY THIS MATTERS -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="exit.reality_label">THE REALITY</div>
+                <h2 class="text-4xl font-semibold tracking-tight" data-i18n="exit.reality_title">Most service businesses are not sellable — or only sell at a discount.</h2>
+                
+                <div class="mt-6 space-y-4 text-lg text-slate-600">
+                    <p>Buyers and successors pay for <strong>predictable cash flow</strong>, <strong>transferable systems</strong>, and <strong>leadership that doesn't depend on the founder</strong>.</p>
+                    <p>Without these, even profitable businesses struggle to achieve strong valuations or smooth transitions.</p>
+                </div>
+            </div>
+            
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                <div class="space-y-6">
+                    <div>
+                        <div class="text-sm font-semibold text-slate-500">Common valuation killers</div>
+                        <ul class="mt-3 space-y-2 text-slate-600">
+                            <li class="flex gap-2">• Owner is the only one who knows how things really work</li>
+                            <li class="flex gap-2">• Inconsistent service and guest experience across sites</li>
+                            <li class="flex gap-2">• High staff turnover with no documented processes</li>
+                            <li class="flex gap-2">• Revenue that walks out the door when key people leave</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE FRAMEWORK -->
+    <section id="framework" class="bg-white border-y border-slate-200 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="exit.framework_label">THE EXIT-READY FRAMEWORK</div>
+                <h2 class="text-4xl font-semibold tracking-tight" data-i18n="exit.framework_title">Six pillars that turn operations into a valuable asset</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="pillar-card bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="font-semibold text-lg tracking-tight">1. Transferable Systems</div>
+                    <p class="mt-3 text-slate-600">Complete, living SOP library and knowledge management so the business doesn't rely on tribal knowledge or any single person.</p>
+                </div>
+                
+                <div class="pillar-card bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="font-semibold text-lg tracking-tight">2. Leadership Depth</div>
+                    <p class="mt-3 text-slate-600">Successor identification, development plans, and delegation frameworks so the business runs at the same standard when you're not there.</p>
+                </div>
+                
+                <div class="pillar-card bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="font-semibold text-lg tracking-tight">3. Consistent CX at Scale</div>
+                    <p class="mt-3 text-slate-600">Standardised customer experience that delivers the same quality across every site, shift, and team member — the foundation of brand value.</p>
+                </div>
+                
+                <div class="pillar-card bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="font-semibold text-lg tracking-tight">4. Owner-Independence Score</div>
+                    <p class="mt-3 text-slate-600">Clear measurement of how much the business depends on you personally, with a roadmap to dramatically reduce it.</p>
+                </div>
+                
+                <div class="pillar-card bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="font-semibold text-lg tracking-tight">5. Financial &amp; Operational Hygiene</div>
+                    <p class="mt-3 text-slate-600">Clean reporting, documented processes, and controls that give buyers and successors confidence in the numbers and operations.</p>
+                </div>
+                
+                <div class="pillar-card bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="font-semibold text-lg tracking-tight">6. Transition Playbook</div>
+                    <p class="mt-3 text-slate-600">A structured plan for the actual handover — whether that's a full sale, family succession, or phased step-back over several years.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU CAN EXPECT -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="max-w-3xl mx-auto">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="exit.expect_label">WHAT YOU CAN EXPECT</div>
+            <h2 class="text-3xl font-semibold tracking-tight" data-i18n="exit.expect_title">What You Can Expect</h2>
+            
+            <ul class="mt-6 space-y-3 text-lg text-slate-600">
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.expect.item1">A business that runs stronger today</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.expect.item2">Significantly higher buyer confidence and valuation</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.expect.item3">Reduced owner dependency</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.expect.item4">Cleaner systems and data for due diligence</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exit.expect.item5">Practical improvements you can implement immediately</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3">WHAT OWNERS ACHIEVE</div>
+            <h2 class="text-3xl font-semibold tracking-tight">Typical outcomes from this work</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div class="bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="text-5xl font-semibold tracking-tighter text-teal-800">2–4×</div>
+                <div class="mt-2 font-medium">Higher likelihood of achieving target valuation when systems and leadership are documented and transferable.</div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="text-5xl font-semibold tracking-tighter text-teal-800">60%+</div>
+                <div class="mt-2 font-medium">Reduction in owner time required for day-to-day operations within 12 months for most clients.</div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="text-5xl font-semibold tracking-tighter text-teal-800">Stronger</div>
+                <div class="mt-2 font-medium">Buyer confidence and smoother due diligence because nothing critical lives only in the owner's head.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THIS IS FOR YOU IF -->
+    <section class="bg-slate-50 border-y border-slate-200 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="exit.for_you_label">THIS IS FOR YOU IF</div>
+                <h2 class="text-3xl font-semibold tracking-tight" data-i18n="exit.for_you_title">This Is For You If</h2>
+                
+                <ul class="mt-6 space-y-3 text-lg text-slate-600">
+                    <li class="flex gap-3">
+                        <span class="text-amber-700 mt-1">→</span> 
+                        <span data-i18n="exit.for_you.item1">You own a service/facilities/cleaning/laundry/hospitality business</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-amber-700 mt-1">→</span> 
+                        <span data-i18n="exit.for_you.item2">You are considering an exit in the next 6–36 months (or want the option)</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-amber-700 mt-1">→</span> 
+                        <span data-i18n="exit.for_you.item3">You are willing to do the real work required</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-amber-700 mt-1">→</span> 
+                        <span data-i18n="exit.for_you.item4">You value practical execution over theory</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="max-w-3xl mx-auto">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="exit.how_label">THE PROCESS</div>
+            <h2 class="text-3xl font-semibold tracking-tight" data-i18n="exit.how_title">How It Works</h2>
+            
+            <ol class="mt-6 space-y-4 text-[17px] text-slate-700">
+                <li class="flex gap-3">
+                    <span class="font-semibold text-teal-800">1.</span>
+                    <div>
+                        <strong data-i18n="exit.how.step1_title">Discovery Call</strong> — <span data-i18n="exit.how.step1_desc">Understand your business and goals</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-semibold text-teal-800">2.</span>
+                    <div>
+                        <strong data-i18n="exit.how.step2_title">Deep Operations Audit</strong> — <span data-i18n="exit.how.step2_desc">Review systems, processes, CX, team structure, and owner dependency</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-semibold text-teal-800">3.</span>
+                    <div>
+                        <strong data-i18n="exit.how.step3_title">Exit-Ready Gap Analysis</strong> — <span data-i18n="exit.how.step3_desc">Clear report on risks and opportunities</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-semibold text-teal-800">4.</span>
+                    <div>
+                        <strong data-i18n="exit.how.step4_title">90-Day Readiness Plan</strong> — <span data-i18n="exit.how.step4_desc">Prioritised, actionable roadmap</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <span class="font-semibold text-teal-800">5.</span>
+                    <div>
+                        <strong data-i18n="exit.how.step5_title">Implementation Support</strong> — <span data-i18n="exit.how.step5_desc">Regular check-ins and guidance (optional extension)</span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="bg-teal-900 text-white py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-300 mb-3" data-i18n="exit.investment_label">INVESTMENT</div>
+                <h2 class="text-3xl font-semibold tracking-tight" data-i18n="exit.investment_title">Investment</h2>
+                
+                <p class="mt-4 text-lg text-teal-100" data-i18n="exit.investment_desc1">Project fees typically range from $8,000 – $25,000+ depending on business size and scope.</p>
+                
+                <p class="mt-4 text-lg" data-i18n="exit.investment_desc2">The best next step is a short Strategy Call (no cost).</p>
+                
+                <button onclick="openBookingModalFromPage()" 
+                        class="mt-6 px-12 py-5 bg-white hover:bg-slate-100 text-teal-900 font-semibold rounded-2xl text-lg transition" data-i18n="exit.investment_cta">
+                    Book Your Strategy Call Now →
+                </button>
+                
+                <p class="mt-4 text-sm text-teal-200" data-i18n="exit.investment_note">Limited capacity. Serious inquiries only.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-6 text-sm">
+                <div class="text-slate-500">
+                    © <span id="year"></span> Sarka Espinosa. All rights reserved.
+                </div>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-slate-600">
+                    <a href="../privacy.html" class="hover:text-slate-900">Privacy</a>
+                    <a href="../terms.html" class="hover:text-slate-900">Terms</a>
+                    <a href="https://www.linkedin.com/in/sarka-espinosa/" target="_blank" class="hover:text-slate-900">LinkedIn</a>
+                    <a href="../index.html#contact" class="hover:text-slate-900">Contact</a>
+                </div>
+                <div class="text-xs text-slate-400">
+                    Geelong, Victoria, Australia
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" onclick="if (event.target.id === 'booking-modal') closeBookingModalFromPage()" class="hidden fixed inset-0 z-[100] bg-black/60 flex items-end md:items-center justify-center p-0 md:p-5">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full md:max-w-lg md:rounded-3xl md:shadow-2xl h-[82vh] md:h-auto flex flex-col rounded-t-3xl overflow-hidden">
+            <div class="md:hidden flex justify-center pt-3 pb-1">
+                <div class="w-10 h-1 rounded-full bg-slate-300"></div>
+            </div>
+            <div class="px-6 pt-3 md:pt-7 pb-5 bg-slate-50 border-b">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-semibold text-2xl tracking-tight">Book a Strategy Call</div>
+                        <div class="text-sm text-slate-600 mt-1">30 minutes • Confidential • No obligation</div>
+                    </div>
+                    <button onclick="closeBookingModalFromPage()" class="w-9 h-9 flex items-center justify-center text-3xl text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full -mr-1 -mt-1">×</button>
+                </div>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-6 md:p-7">
+                <div class="text-sm mb-4 text-slate-600">This conversation is specifically for owners exploring Exit-Ready Operations work.</div>
+                
+                <!-- Calendly embed - replace the data-url with your real Calendly link -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+                <!-- Fallback if embed not ready -->
+                <!-- 
+                <div class="rounded-2xl border border-slate-200 p-6 md:p-8 text-center bg-slate-50">
+                    <div class="font-medium mb-2">Scheduling coming soon</div>
+                    <p class="text-sm text-slate-500 mb-6">In the meantime, email me directly and I’ll send you available times.</p>
+                    
+                    <a href="mailto:sarka@sarka-ops.com?subject=Exit-Ready%20Operations%20Enquiry" 
+                       class="inline-block text-sm font-semibold bg-white border px-6 py-2.5 rounded-2xl hover:bg-slate-100 active:bg-slate-200">
+                        Email Sarka directly
+                    </a>
+                </div>
+                -->
+
+                <div class="text-[10px] text-center mt-5 text-slate-400">I typically respond within a few hours during business days.</div>
+            </div>
+            
+            <div class="md:hidden bg-slate-50 px-6 py-4 border-t sticky bottom-0">
+                <button onclick="closeBookingModalFromPage()" class="w-full text-sm font-semibold text-slate-600 py-2 active:text-slate-900">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>`;
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>`;
+                }
+            });
+        }
+        
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (!navbar) return;
+            if (window.scrollY > 80) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+        
+        function openBookingModalFromPage() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBookingModalFromPage() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const booking = document.getElementById('booking-modal');
+                if (!booking.classList.contains('hidden')) {
+                    closeBookingModalFromPage();
+                }
+            }
+        });
+        
+        console.log('%c[Exit-Ready Operations] Premium page loaded', 'color:#64748b');
+    </script>
+</body>
+</html>

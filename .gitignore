@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build / temp
+.DS_Store
+*.log
+*.docx
+Sarka-Ops-Website-CMO-Update-*.docx
+
+# Environment / secrets
+.env
+.env.local
+
+# OS files
+Thumbs.db

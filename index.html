@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sarka Espinosa helps ambitious service businesses build the systems, leadership, and customer experiences that match the level of their ambition. Based in Geelong, Australia.">
+    <meta name="keywords" content="customer experience consultant, operations consulting, SOP development, Zoho CRM, Salesforce, HubSpot, business process improvement, hospitality consulting, facilities management, Geelong consultant">
+    <title>Sarka Espinosa | Exit-Ready Operations &amp; Commercial Growth</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f766e'/%3E%3Ctext x='50' y='65' font-size='48' font-family='system-ui' fill='white' text-anchor='middle' font-weight='700'%3ES%3C/text%3E%3C/svg%3E">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --accent: #0f766e;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(to right, #0f766e, #14b8a6);
+            border-radius: 3px;
+        }
+
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .process-step {
+            position: relative;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 23px;
+            width: 2px;
+            height: calc(100% - 64px);
+            background: #e2e8f0;
+        }
+
+        .testimonial {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0f766e;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .modal {
+            animation: modalPop 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .value-prop {
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-slate-50">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 rounded-2xl bg-teal-800 flex items-center justify-center">
+                        <span class="text-white font-bold text-2xl tracking-tighter">S</span>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-xl tracking-tight">Sarka Espinosa</div>
+                        <div class="text-[10px] text-slate-500 -mt-1 tracking-[1px]">CONSULTING</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#services" class="nav-link text-slate-600 hover:text-slate-900" data-i18n="nav.services">Services</a>
+                    <a href="#results" class="nav-link text-slate-600 hover:text-slate-900" data-i18n="nav.results">Results</a>
+                    <a href="#in-the-room" class="nav-link text-slate-600 hover:text-slate-900" data-i18n="nav.in_the_room">In the Room</a>
+                    <a href="#about" class="nav-link text-slate-600 hover:text-slate-900" data-i18n="nav.about">About</a>
+                    <a href="#how" class="nav-link text-slate-600 hover:text-slate-900" data-i18n="nav.how_i_work">How I Work</a>
+                    <a href="/insights/" class="nav-link text-slate-600 hover:text-slate-900" data-i18n="nav.insights">Insights</a>
+                    <!-- Language selector -->
+                    <select id="lang-select" class="text-sm border border-slate-300 rounded-xl px-2 py-1 bg-white focus:outline-none cursor-pointer">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="cz">CZ</option>
+                    </select>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center gap-x-3">
+                    <a href="#contact" 
+                       class="px-5 py-2.5 text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors">
+                        <span data-i18n="nav.contact">Contact</span>
+                    </a>
+                    <button onclick="openBookingModal()"
+                            class="px-5 py-2.5 bg-teal-800 hover:bg-teal-900 transition-all text-white text-sm font-semibold rounded-2xl flex items-center gap-x-2 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        <span data-i18n="nav.book_call">Book Strategy Call</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-xl transition-colors"
+                        aria-label="Toggle menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
+                <a href="#services" class="py-1 text-slate-600 active:text-teal-800">Services</a>
+                <a href="#results" class="py-1 text-slate-600 active:text-teal-800">Results</a>
+                <a href="#in-the-room" class="py-1 text-slate-600 active:text-teal-800">In the Room</a>
+                <a href="#about" class="py-1 text-slate-600 active:text-teal-800">About</a>
+                <a href="#how" class="py-1 text-slate-600 active:text-teal-800">How I Work</a>
+                <a href="/insights/" class="py-1 text-slate-600 active:text-teal-800">Insights</a>
+                <div class="py-1 flex items-center justify-between">
+                    <span class="text-slate-500 text-xs">Language</span>
+                    <select id="lang-select-mobile" class="text-sm border border-slate-300 rounded-xl px-2 py-1 bg-white">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="cz">CZ</option>
+                    </select>
+                </div>
+                <div class="pt-3 border-t flex flex-col gap-y-3">
+                    <a href="#contact" class="py-2 text-center text-slate-700 font-semibold border border-slate-200 rounded-2xl">Get in touch</a>
+                    <button onclick="openBookingModal(); document.getElementById('mobile-menu').classList.add('hidden')"
+                            class="py-3 bg-teal-800 text-white font-semibold rounded-2xl">Book a Strategy Call</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative pt-20 overflow-hidden bg-slate-950">
+        <div class="absolute inset-0 bg-[radial-gradient(#334155_0.6px,transparent_1px)] bg-[length:2.5px_2.5px] opacity-10"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 pt-28 pb-16 md:pt-32 md:pb-20 relative">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full bg-white/5 text-teal-300 text-[10px] font-medium tracking-[3px] mb-8" data-i18n="hero.location">
+                    GEELONG, AUSTRALIA
+                </div>
+                
+                <h1 class="text-[58px] md:text-[68px] font-semibold tracking-[-3.5px] text-white leading-[0.96]" data-i18n="hero.title">
+                    Exit-Ready Operations &amp; Commercial Growth
+                </h1>
+                
+                <p class="mt-6 text-[20px] text-slate-300 max-w-[620px] leading-tight tracking-[-0.15px]" data-i18n="hero.subtitle">
+                    I help ambitious owners of service businesses build operations that scale, perform at the highest level, and are fully prepared for exit or major growth — without depending on you.
+                </p>
+
+                <div class="mt-9 flex flex-wrap items-center gap-4">
+                    <button onclick="openBookingModal()"
+                            class="inline-flex items-center justify-center gap-x-3 bg-white hover:bg-slate-100 active:bg-slate-200 transition-all text-slate-950 px-8 h-11 rounded-2xl text-sm font-semibold tracking-[-0.2px]">
+                        <span data-i18n="hero.cta_book">Book a Strategy Call</span>
+                    </button>
+                    
+                    <a href="#in-the-room" 
+                       class="inline-flex items-center justify-center gap-x-2 px-6 h-11 border border-white/20 hover:bg-white/5 text-white text-sm font-medium rounded-2xl transition-all" data-i18n="hero.cta_rooms">
+                        See the Rooms I’ve Been In
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="border-t border-white/10 bg-slate-900/50 backdrop-blur">
+            <div class="max-w-5xl mx-auto px-5 md:px-6 py-4 text-center md:text-left">
+                <p class="text-[12px] md:text-[11px] text-slate-400 tracking-[-0.1px]" data-i18n="hero.trust">
+                    Geelong, Australia • Working with service business leaders across Australia
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- IN THE ROOM (moved higher for maximum credibility impact) -->
+    <section id="in-the-room" class="bg-white border-y border-slate-200 py-14 md:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-2" data-i18n="inroom.label">IN THE ROOM</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight" data-i18n="inroom.title">In the Room with Exceptional Operators</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto" data-i18n="inroom.desc">
+                    I’ve had the privilege of working alongside and learning from some of the sharpest minds in business and performance. 
+                    These experiences shape how I help service business owners become truly Exit-Ready.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Photo 1: 4-person NY with Catsimatis + JT Foxx -->
+                <div onclick="showRoomStory(0)" class="group bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md active:scale-[0.985] active:bg-slate-50 transition-all cursor-pointer touch-manipulation">
+                    <div class="overflow-hidden">
+                        <img src="assets/in-the-room-ny.jpg" alt="Sarka with JT Foxx and billionaire entrepreneur Catsimatis in New York" class="w-full h-auto object-cover object-top aspect-[16/11] group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex items-center justify-between">
+                        <p class="text-sm font-medium text-slate-800">With billionaire entrepreneur John Catsimatis and his wife in New York</p>
+                        <span class="text-[10px] uppercase tracking-widest text-teal-700 font-semibold opacity-70 group-hover:opacity-100">Read story →</span>
+                    </div>
+                </div>
+
+                <!-- Photo 2: With JT Foxx -->
+                <div onclick="showRoomStory(1)" class="group bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="assets/in-the-room-jt-foxx.jpg" alt="Sarka with JT Foxx" class="w-full h-auto object-cover object-top aspect-[16/11] group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex items-center justify-between">
+                        <p class="text-sm font-medium text-slate-800">With JT Foxx</p>
+                        <span class="text-[10px] uppercase tracking-widest text-teal-700 font-semibold opacity-70 group-hover:opacity-100">Read story →</span>
+                    </div>
+                </div>
+
+                <!-- Photo 3: With Joe Foster, Reebok Co-Founder -->
+                <div onclick="showRoomStory(2)" class="group bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="assets/in-the-room-joe-foster.jpg" alt="Sarka with Joe Foster, Co-Founder of Reebok" class="w-full h-auto object-cover object-top aspect-[16/11] group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex items-center justify-between">
+                        <p class="text-sm font-medium text-slate-800">With Joe Foster, Co-Founder of Reebok</p>
+                        <span class="text-[10px] uppercase tracking-widest text-teal-700 font-semibold opacity-70 group-hover:opacity-100">Read story →</span>
+                    </div>
+                </div>
+
+                <!-- Photo 4: Tom Brady -->
+                <div onclick="showRoomStory(3)" class="group bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="assets/tom-brady.jpg" alt="Sarka with Tom Brady in Melbourne" class="w-full h-auto object-cover object-top aspect-[16/11] group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex items-center justify-between">
+                        <p class="text-sm font-medium text-slate-800">Alongside Tom Brady in Melbourne</p>
+                        <span class="text-[10px] uppercase tracking-widest text-teal-700 font-semibold opacity-70 group-hover:opacity-100">Read story →</span>
+                    </div>
+                </div>
+
+                <!-- Photo 5: With Tim Gannon and JT Foxx -->
+                <div onclick="showRoomStory(4)" class="group bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer">
+                    <div class="overflow-hidden">
+                        <img src="assets/in-the-room-tim-gannon.jpg" alt="Sarka with Tim Gannon, Co-Founder of Outback Steakhouse, and JT Foxx" class="w-full h-auto object-cover object-top aspect-[16/11] group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex items-center justify-between">
+                        <p class="text-sm font-medium text-slate-800">With Tim Gannon, Co-Founder of Outback Steakhouse, and JT Foxx</p>
+                        <span class="text-[10px] uppercase tracking-widest text-teal-700 font-semibold opacity-70 group-hover:opacity-100">Read story →</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center text-xs text-slate-500" data-i18n="inroom.more">
+                More moments from high-authority rooms available upon request.
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="max-w-7xl mx-auto px-5 md:px-6 pt-16 pb-14 md:pt-20 md:pb-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-10">
+            <div>
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-2" data-i18n="services.label">HOW I HELP</div>
+                <h2 class="text-4xl font-semibold tracking-tight section-header" data-i18n="services.title">Strategic support for ambitious service businesses</h2>
+            </div>
+            <p class="max-w-md text-slate-600" data-i18n="services.desc">The no-nonsense support for leaders ready to face the hard truths and build organizations that actually scale and perform.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <!-- Service 1 -->
+            <div onclick="showServiceModal(0)" class="service-card group cursor-pointer bg-white border border-slate-200 hover:border-teal-200 active:border-teal-300 active:bg-slate-50 active:scale-[0.985] rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-100 touch-manipulation">
+                <div class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 012 2z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-[21px] md:text-2xl tracking-tight mb-2.5" data-i18n="service1.title">Customer Experience Strategy</h3>
+                <p class="text-slate-600 flex-1 text-[15px] leading-snug" data-i18n="service1.desc">Build CX systems that increase customer retention, reduce churn, and directly strengthen business valuation for exit or growth.</p>
+                <div class="mt-5 text-teal-700 group-hover:text-teal-800 active:text-teal-900 inline-flex items-center text-sm font-semibold">
+                    <span data-i18n="service.learn_more">Learn more</span> <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div onclick="showServiceModal(1)" class="service-card group cursor-pointer bg-white border border-slate-200 hover:border-teal-200 active:border-teal-300 active:bg-slate-50 active:scale-[0.985] rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-100 touch-manipulation">
+                <div class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2m0-2a2 2 0 012-2m0 2v2m0-2a2 2 0 01-2 2" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-[21px] md:text-2xl tracking-tight mb-2.5" data-i18n="service2.title">SOP Development &amp; Process Design</h3>
+                <p class="text-slate-600 flex-1 text-[15px] leading-snug" data-i18n="service2.desc">Turn tribal knowledge into clear, documented, scalable systems that make your business less owner-dependent and buyer-ready.</p>
+                <div class="mt-5 text-teal-700 group-hover:text-teal-800 active:text-teal-900 inline-flex items-center text-sm font-semibold">
+                    <span data-i18n="service.learn_more">Learn more</span> <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div onclick="showServiceModal(2)" class="service-card group cursor-pointer bg-white border border-slate-200 hover:border-teal-200 active:border-teal-300 active:bg-slate-50 active:scale-[0.985] rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-100 touch-manipulation">
+                <div class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 01-2 2v10m-6 0a2 2 0 01-2-2m0 0a2 2 0 012-2m0 2a2 2 0 002 2" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-[21px] md:text-2xl tracking-tight mb-2.5" data-i18n="service3.title">Sales Systems &amp; CRM Implementation</h3>
+                <p class="text-slate-600 flex-1 text-[15px] leading-snug" data-i18n="service3.desc">Implement proven revenue operating systems (Zoho CRM &amp; Salesforce) that deliver predictable growth and clean, due-diligence-ready financials.</p>
+                <div class="mt-5 text-teal-700 group-hover:text-teal-800 active:text-teal-900 inline-flex items-center text-sm font-semibold">
+                    <span data-i18n="service.learn_more">Learn more</span> <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div onclick="showServiceModal(3)" class="service-card group cursor-pointer bg-white border border-slate-200 hover:border-teal-200 active:border-teal-300 active:bg-slate-50 active:scale-[0.985] rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-100 touch-manipulation min-h-[178px] md:min-h-0">
+                <div class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-violet-100 text-violet-700 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-[21px] md:text-2xl tracking-tight mb-2.5" data-i18n="service4.title">Leadership &amp; Team Development</h3>
+                <p class="text-slate-600 flex-1 text-[15px] leading-snug" data-i18n="service4.desc">Develop your managers and frontline teams so the business can perform at a high level even without your daily involvement — essential for any exit.</p>
+                <div class="mt-5 text-teal-700 group-hover:text-teal-800 active:text-teal-900 inline-flex items-center text-sm font-semibold">
+                    <span data-i18n="service.learn_more">Learn more</span> <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div onclick="showServiceModal(4)" class="service-card group cursor-pointer bg-white border border-slate-200 hover:border-teal-200 active:border-teal-300 active:bg-slate-50 active:scale-[0.985] rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-100 touch-manipulation min-h-[178px] md:min-h-0">
+                <div class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-[21px] md:text-2xl tracking-tight mb-2.5" data-i18n="service5.title">Fractional CX &amp; Operations Leadership</h3>
+                <p class="text-slate-600 flex-1 text-[15px] leading-snug" data-i18n="service5.desc">Get embedded senior-level support to drive commercial performance while simultaneously building robust, Exit-Ready operations.</p>
+                <div class="mt-5 text-teal-700 group-hover:text-teal-800 active:text-teal-900 inline-flex items-center text-sm font-semibold">
+                    <span data-i18n="service.learn_more">Learn more</span> <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                </div>
+            </div>
+
+            <!-- Service 6: Exit-Ready Operations (Flagship) -->
+            <div onclick="showServiceModal(5)" class="service-card group cursor-pointer bg-white border-2 border-amber-300 hover:border-amber-400 active:border-amber-500 active:bg-amber-50 active:scale-[0.985] rounded-3xl p-6 md:p-8 flex flex-col transition-all duration-100 touch-manipulation min-h-[178px] md:min-h-0 relative shadow-sm">
+                <div class="absolute top-4 right-4 px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-amber-400 text-amber-950 rounded-full" data-i18n="service6.badge">Flagship</div>
+                <div class="w-11 h-11 md:w-12 md:h-12 rounded-2xl bg-amber-200 text-amber-800 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-[21px] md:text-2xl tracking-tight mb-2.5 pr-16" data-i18n="service6.title">Exit-Ready Operations</h3>
+                <p class="text-slate-600 flex-1 text-[15px] leading-snug" data-i18n="service6.desc">Full Exit-Ready Operations Audit + 90-Day Readiness Plan. Identify and fix the hidden weaknesses that destroy 30–50% of business value at exit.</p>
+                <div class="mt-5 text-amber-700 group-hover:text-amber-800 active:text-amber-900 inline-flex items-center text-sm font-semibold">
+                    <span data-i18n="service.learn_more">Learn more</span> <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXIT-READY FLAGSHIP -->
+    <section id="exit-ready" class="max-w-7xl mx-auto px-5 md:px-6 py-16 md:py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-3xl">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-amber-700 mb-2" data-i18n="exitready.label">FLAGSHIP OFFERING</div>
+            
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight" data-i18n="exitready.title">Exit-Ready Operations Audit + 90-Day Plan</h2>
+            
+            <p class="mt-2 font-semibold text-slate-700" data-i18n="exitready.flagship">My flagship offering.</p>
+            
+            <p class="mt-4 text-[15px] leading-relaxed text-slate-600" data-i18n="exitready.desc">I help small-to-medium service business owners close the gap between day-to-day operations and long-term commercial value.</p>
+            
+            <ul class="mt-6 space-y-3 text-[15px] text-slate-600">
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exitready.benefit1">Avoid the common mistakes that destroy 30–50% of exit value</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exitready.benefit2">Build systems that make your business run and sell without you</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-amber-700 mt-1">→</span> 
+                    <span data-i18n="exitready.benefit3">Get a clear, actionable 90-day plan that increases buyer confidence and valuation</span>
+                </li>
+            </ul>
+
+            <a href="/exit-ready-operations/" 
+               class="mt-8 inline-flex items-center justify-center gap-x-2 px-6 py-3 bg-teal-800 hover:bg-teal-900 active:bg-teal-950 transition text-white text-sm font-semibold rounded-2xl">
+                <span data-i18n="exitready.cta">Learn more about the Exit-Ready Program</span> <span class="ml-1">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- RESULTS / IMPACT -->
+    <section id="results" class="bg-white border-y border-slate-200 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="results.label">EXIT-READY OUTCOMES</div>
+                <h2 class="text-4xl font-semibold tracking-tight" data-i18n="results.title">Typical Outcomes for Exit-Ready Clients</h2>
+            </div>
+
+            <ul class="max-w-2xl mx-auto space-y-4 text-[17px] text-slate-700">
+                <li class="flex gap-3">
+                    <span class="text-teal-700 mt-1">→</span> 
+                    <span data-i18n="results.outcome1">Clearer systems that reduce owner dependency</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-teal-700 mt-1">→</span> 
+                    <span data-i18n="results.outcome2">Higher buyer confidence during due diligence</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-teal-700 mt-1">→</span> 
+                    <span data-i18n="results.outcome3">Stronger commercial performance while preparing for exit</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-teal-700 mt-1">→</span> 
+                    <span data-i18n="results.outcome4">Avoidance of common valuation killers</span>
+                </li>
+            </ul>
+
+            <p class="mt-8 text-center text-sm text-slate-500 italic">
+                <span data-i18n="results.note">Real results coming as we deliver projects.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-7xl mx-auto px-5 md:px-6 py-16 md:py-20">
+        <div class="grid lg:grid-cols-12 gap-x-12 items-center">
+            <div class="lg:col-span-5">
+                <div class="relative">
+                    <div class="aspect-square rounded-3xl overflow-hidden bg-slate-200 shadow-xl ring-1 ring-slate-900/5 relative">
+                        <!-- Replace with your solo professional photo -->
+                        <img src="assets/profile-sarka.jpg" alt="Šárka Espinosa" class="w-full h-full object-cover">
+                        
+                        <!-- Name overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/80 to-transparent p-6">
+                            <div class="text-white">
+                                <div class="font-semibold tracking-tight text-2xl">Šárka Espinosa</div>
+                                <div class="text-teal-300 text-sm tracking-widest mt-0.5">FOUNDER &amp; PRINCIPAL CONSULTANT</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-white border border-slate-200 shadow-md rounded-2xl px-5 py-3 text-sm hidden lg:block">
+                        <div class="flex items-center gap-x-2">
+                            <div class="text-emerald-600">●</div>
+                            <span class="font-medium text-slate-700">Available for select engagements 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-7 mt-10 lg:mt-0">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3" data-i18n="about.label">MY STORY</div>
+                <h2 class="text-4xl font-semibold tracking-tight leading-tight" data-i18n="about.title">14 years operating at the level where excellence is non-negotiable.</h2>
+                
+                <div class="prose prose-slate text-[15px] max-w-2xl mt-6 text-slate-600 space-y-5">
+                    <p data-i18n="about.p1">My career has taken me from high-volume hotels on the Gold Coast to multi-site facilities services in regional Victoria — leading sales, procurement, and operations teams that consistently delivered the best results in their businesses.</p>
+                    
+                    <p data-i18n="about.p2">Along the way, I’ve had the privilege of spending time with founders and operators who have built significant enterprises. These experiences have shaped how I think about scaling, leadership, and what it actually takes to build organizations that perform at a high level.</p>
+                    
+                    <p data-i18n="about.p3">Today I work with a small number of ambitious service business leaders who want practical, no-fluff help building the systems, teams, and customer experiences that match the level of their ambition — whether through full transformations, operational overhauls, or ongoing strategic guidance as a fractional partner.</p>
+                </div>
+
+                <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                    <div class="px-4 py-3 bg-white border rounded-2xl">
+                        <div class="font-semibold" data-i18n="about.languages_label">Languages</div>
+                        <div class="text-xs mt-1 text-slate-500" data-i18n="about.languages">Czech (native)<br>Spanish (fluent)<br>English (fluent)<br>French (conversational)</div>
+                    </div>
+                    <div class="px-4 py-3 bg-white border rounded-2xl">
+                        <div class="font-semibold" data-i18n="about.education_label">Education</div>
+                        <div class="text-xs mt-1 text-slate-500" data-i18n="about.education">Master’s in Accounts &amp; Business<br>Bachelor of Hospitality Management</div>
+                    </div>
+                    <div class="px-4 py-3 bg-white border rounded-2xl">
+                        <div class="font-semibold" data-i18n="about.systems_label">Systems</div>
+                        <div class="text-xs mt-1 text-slate-500" data-i18n="about.systems">Zoho CRM, Salesforce, HubSpot<br>Jiwa ERP, Xero, Microsoft 365 + Copilot<br>Asana, Power BI, Zapier, Lucidchart</div>
+                    </div>
+                    <div class="px-4 py-3 bg-white border rounded-2xl">
+                        <div class="font-semibold" data-i18n="about.approach_label">Approach</div>
+                        <div class="text-xs mt-1 text-slate-500" data-i18n="about.approach">Practical. Data-informed.<br>Human-centred.<br>Zero fluff.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section id="how" class="bg-slate-900 text-slate-200 py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-400 mb-3" data-i18n="engagements.label">ENGAGEMENTS</div>
+                <h2 class="text-4xl font-semibold tracking-tight text-white" data-i18n="engagements.title">A clear, collaborative process from day one.</h2>
+                <p class="mt-4 text-slate-400" data-i18n="engagements.desc">No cookie-cutter frameworks. Every engagement starts with deep listening and ends with sustainable systems you actually use.</p>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-4 gap-6">
+                <div class="process-step bg-slate-800/70 border border-slate-700 rounded-3xl p-8">
+                    <div class="text-teal-400 font-mono text-sm font-semibold tracking-widest">01</div>
+                    <div class="mt-4 font-semibold text-xl text-white" data-i18n="engagements.step1_title">Discovery Call</div>
+                    <p class="mt-3 text-sm text-slate-300" data-i18n="engagements.step1_desc">Free 30-minute conversation to understand your biggest challenges, goals, and constraints. No pitch — just clarity.</p>
+                </div>
+                <div class="process-step bg-slate-800/70 border border-slate-700 rounded-3xl p-8">
+                    <div class="text-teal-400 font-mono text-sm font-semibold tracking-widest">02</div>
+                    <div class="mt-4 font-semibold text-xl text-white" data-i18n="engagements.step2_title">Diagnostic &amp; Roadmap</div>
+                    <p class="mt-3 text-sm text-slate-300" data-i18n="engagements.step2_desc">I conduct interviews, review data and processes, then deliver a prioritised roadmap with clear ROI projections.</p>
+                </div>
+                <div class="process-step bg-slate-800/70 border border-slate-700 rounded-3xl p-8">
+                    <div class="text-teal-400 font-mono text-sm font-semibold tracking-widest">03</div>
+                    <div class="mt-4 font-semibold text-xl text-white" data-i18n="engagements.step3_title">Implementation Partnership</div>
+                    <p class="mt-3 text-sm text-slate-300" data-i18n="engagements.step3_desc">We work together (or I lead) to build and embed the systems. Weekly check-ins, hands-on workshops, and team training included.</p>
+                </div>
+                <div class="process-step bg-slate-800/70 border border-slate-700 rounded-3xl p-8">
+                    <div class="text-teal-400 font-mono text-sm font-semibold tracking-widest">04</div>
+                    <div class="mt-4 font-semibold text-xl text-white" data-i18n="engagements.step4_title">Measure &amp; Sustain</div>
+                    <p class="mt-3 text-sm text-slate-300" data-i18n="engagements.step4_desc">90-day review, KPI dashboards, and a handover package so your team owns the improvements long-term. Optional retainer available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="max-w-7xl mx-auto px-5 md:px-6 py-16 md:py-20">
+        <div class="text-center mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700" data-i18n="feedback.label">REAL FEEDBACK</div>
+            <h2 class="text-4xl font-semibold tracking-tight mt-2" data-i18n="feedback.title">What leaders say about working together</h2>
+        </div>
+
+        <div class="relative">
+            <div id="testimonials-container" class="grid md:grid-cols-3 gap-6">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section id="insights" class="border-t border-slate-200 bg-white py-14 md:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-9">
+                <div>
+                    <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-2" data-i18n="insights.label">THOUGHT LEADERSHIP</div>
+                    <a href="/insights/" class="hover:text-teal-700 transition-colors"><h2 class="text-4xl font-semibold tracking-tight" data-i18n="insights.title">Latest insights</h2></a>
+                </div>
+                <a href="/insights/" class="mt-3 md:mt-0 text-sm text-slate-500 hover:text-teal-700 transition-colors" data-i18n="insights.see_all">See all insights →</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/insights/the-7-sops-every-multi-site-service-business-needs-in-2026/" class="group block bg-white border border-slate-200 hover:border-teal-200 hover:shadow-sm rounded-3xl p-7 transition">
+                    <div class="text-xs uppercase tracking-wider font-semibold text-amber-700">OPERATIONS</div>
+                    <h4 class="mt-3 font-semibold text-xl tracking-tight group-hover:text-teal-700 transition">The 7 SOPs Every Multi-Site Service Business Needs in 2026</h4>
+                    <p class="mt-3 text-sm text-slate-600 line-clamp-3">From daily briefing routines to escalation playbooks — the exact documents that separate chaotic operators from the ones that scale smoothly.</p>
+                    <div class="mt-5 inline-flex items-center text-sm font-semibold text-teal-700 group-hover:text-teal-800">
+                        Read the article <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                    </div>
+                </a>
+
+                <a href="/insights/why-most-crm-projects-fail-and-what-to-do-instead/" class="group block bg-white border border-slate-200 hover:border-teal-200 hover:shadow-sm rounded-3xl p-7 transition">
+                    <div class="text-xs uppercase tracking-wider font-semibold text-amber-700">CUSTOMER EXPERIENCE</div>
+                    <h4 class="mt-3 font-semibold text-xl tracking-tight group-hover:text-teal-700 transition">Why Most CRM Projects Fail — And What To Do Instead</h4>
+                    <p class="mt-3 text-sm text-slate-600 line-clamp-3">Technology is rarely the problem. It’s the missing sales process, poor data hygiene, and lack of frontline buy-in. Here’s the fix.</p>
+                    <div class="mt-5 inline-flex items-center text-sm font-semibold text-teal-700 group-hover:text-teal-800">
+                        Read the article <span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
+                    </div>
+                </a>
+
+                <!-- Live article -->
+                <a href="/insights/turning-frontline-staff-into-your-best-cx-asset/" class="group block bg-white border border-slate-200 hover:border-teal-200 hover:shadow-sm rounded-3xl p-7 transition">
+                    <div class="text-xs uppercase tracking-wider font-semibold text-amber-700">LEADERSHIP</div>
+                    <h4 class="mt-3 font-semibold text-xl tracking-tight group-hover:text-teal-700 transition">Turning Frontline Staff into Your Best CX Asset</h4>
+                    <p class="mt-3 text-sm text-slate-600 line-clamp-3">Most training fails because it’s theoretical. The practical shift that creates measurable lifts in first-contact resolution, loyalty, and frontline retention.</p>
+                    <div class="mt-5 inline-flex items-center text-sm font-semibold text-teal-700 group-hover:text-teal-800">
+                        Read the article <span class="ml-1.5 group-hover:ml-2 transition">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="cta-final" class="bg-teal-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-semibold tracking-tight" data-i18n="cta.final.title">Ready to Make Your Business Exit-Ready?</h2>
+            
+            <p class="mt-4 text-xl text-teal-100 max-w-2xl mx-auto" data-i18n="cta.final.subtitle">
+                Let’s have a short strategy call. I’ll review your current situation and show you the biggest opportunities to increase value and reduce exit risk.
+            </p>
+
+            <button onclick="openBookingModal()" 
+                    class="mt-8 inline-flex items-center justify-center bg-amber-400 hover:bg-amber-300 active:bg-white text-black font-semibold px-10 py-4 rounded-2xl text-lg transition">
+                <span data-i18n="cta.final.book">Book Your Strategy Call</span> <span class="ml-2">→</span>
+            </button>
+
+            <p class="mt-6 text-sm text-teal-200 opacity-75" data-i18n="cta.final.note">
+                Limited slots available. Serious inquiries only.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-5xl mx-auto px-5 md:px-6 py-14 md:py-20">
+        <div class="grid md:grid-cols-5 gap-x-16 gap-y-12">
+            <div class="md:col-span-2">
+                <div class="sticky top-24">
+                    <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700">LET’S CONNECT</div>
+                    <h2 class="mt-3 text-4xl font-semibold tracking-tight">Tell me about your challenge.</h2>
+                    
+                    <div class="mt-8 space-y-4 text-sm">
+                        <div>
+                            <div class="text-slate-500 text-xs">PHONE</div>
+                            <a href="tel:+61478794176" class="font-medium hover:text-teal-700">0478 794 176</a>
+                        </div>
+                        <div>
+                            <div class="text-slate-500 text-xs">LOCATION</div>
+                            <div class="font-medium">Geelong, Victoria, Australia</div>
+                            <div class="text-xs text-slate-500">Available for on-site work in Greater Melbourne &amp; Geelong region</div>
+                        </div>
+                        <div>
+                            <div class="text-slate-500 text-xs">LINKEDIN</div>
+                            <a href="https://www.linkedin.com/in/sarka-espinosa/" target="_blank" class="font-medium hover:text-teal-700">linkedin.com/in/sarka-espinosa</a>
+                        </div>
+                        <div>
+                            <div class="text-slate-500 text-xs">EMAIL</div>
+                            <a href="mailto:sarka@sarka-ops.com" class="font-medium hover:text-teal-700">sarka@sarka-ops.com</a>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <button onclick="openContactEmail()"
+                                class="inline-flex items-center gap-x-2 px-5 py-2.5 text-sm font-semibold border border-teal-800 text-teal-800 hover:bg-teal-800 hover:text-white rounded-2xl transition-all">
+                            Email Sarka directly
+                        </button>
+                    </div>
+
+                    <div class="mt-9 pt-8 border-t text-xs text-slate-500">
+                        Prefer a quick chat? Use the booking button to grab a time that suits you.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="md:col-span-3">
+                <!-- Formspree form (real endpoint) -->
+                <form id="contact-form" action="https://formspree.io/f/mojbbgvp" method="POST" class="space-y-5">
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-semibold tracking-widest text-slate-500 mb-1.5">YOUR NAME</label>
+                            <input type="text" name="name" id="name" required class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold tracking-widest text-slate-500 mb-1.5">COMPANY / ROLE</label>
+                            <input type="text" name="company" id="company" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-semibold tracking-widest text-slate-500 mb-1.5">EMAIL ADDRESS</label>
+                            <input type="email" name="email" id="email" required class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold tracking-widest text-slate-500 mb-1.5">PHONE (OPTIONAL)</label>
+                            <input type="tel" name="phone" id="phone" class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold tracking-widest text-slate-500 mb-1.5">WHAT ARE YOU LOOKING TO ACHIEVE?</label>
+                        <textarea name="message" id="message" rows="5" required placeholder="Tell me about your biggest operational or customer experience challenge right now..." class="w-full px-4 py-3 rounded-3xl border border-slate-200 focus:border-teal-600 focus:ring-1 focus:ring-teal-600 outline-none text-sm resize-y"></textarea>
+                    </div>
+
+                    <div class="flex items-start gap-x-3 pt-1">
+                        <input type="checkbox" id="consent" required class="mt-1 accent-teal-700">
+                        <label for="consent" class="text-xs text-slate-500 leading-snug">
+                            I agree to be contacted about my enquiry. Sarka will respond within 24 hours.
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submit-btn"
+                            class="w-full md:w-auto px-10 py-4 bg-teal-800 hover:bg-teal-900 active:bg-slate-950 transition text-white font-semibold rounded-2xl text-sm tracking-wide flex items-center justify-center gap-x-2">
+                        SEND MESSAGE
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+
+                    <p class="text-[10px] text-slate-400">
+                        Or email directly: 
+                        <a href="mailto:sarka@sarka-ops.com" class="text-teal-700 hover:text-teal-800 font-medium">sarka@sarka-ops.com</a>
+                    </p>
+                    <a href="mailto:sarka@sarka-ops.com" class="text-[10px] text-teal-700 hover:text-teal-800 font-medium">Or email Sarka directly →</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 text-sm py-9 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-y-4 text-xs">
+            <div>© <span id="year"></span> Sarka Espinosa Consulting. All rights reserved.</div>
+            <div class="flex items-center gap-x-5">
+                <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
+                <a href="terms.html" class="hover:text-slate-200">Terms</a>
+                <a href="https://www.linkedin.com/in/sarka-espinosa/" target="_blank" class="hover:text-slate-200">LinkedIn</a>
+                <span class="text-slate-700">•</span>
+                <span class="font-mono text-[10px]">GEELONG, VIC</span>
+                <a href="https://app.netlify.com/projects/sarkaops/deploys" target="_blank" class="ml-2">
+                    <img src="https://api.netlify.com/api/v1/badges/7a7a2b21-0eea-489f-97d3-5fa058cc4908/deploy-status" alt="Netlify Status" class="h-5">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" onclick="if (event.target.id === 'booking-modal') closeBookingModal()" class="hidden fixed inset-0 z-[100] bg-black/60 flex items-end md:items-center justify-center p-0 md:p-5">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full md:max-w-lg md:rounded-3xl md:shadow-2xl h-[82vh] md:h-auto flex flex-col rounded-t-3xl overflow-hidden">
+            <!-- Mobile drag handle -->
+            <div class="md:hidden flex justify-center pt-3 pb-1">
+                <div class="w-10 h-1 rounded-full bg-slate-300"></div>
+            </div>
+            <div class="px-6 pt-3 md:pt-7 pb-5 bg-slate-50 border-b">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-semibold text-2xl tracking-tight" data-i18n="booking.title">Book a Strategy Call</div>
+                        <div class="text-sm text-slate-600 mt-1" data-i18n="booking.subtitle">30 minutes • Free • No obligation</div>
+                    </div>
+                    <button onclick="closeBookingModal()" 
+                            class="w-9 h-9 flex items-center justify-center text-3xl text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full -mr-1 -mt-1">×</button>
+                </div>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-6 md:p-7">
+                <div class="text-sm mb-4 text-slate-600">Choose a time that works for you. I’ll send a calendar invite immediately.</div>
+                
+                <!-- 
+                    TODO: Paste your Calendly embed code here when ready.
+                    Example:
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                -->
+                
+                <!-- Calendly embed - replace the data-url with your real Calendly link -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+                <!-- Fallback if embed not ready -->
+                <!-- 
+                <div class="rounded-2xl border border-slate-200 p-6 md:p-8 text-center bg-slate-50">
+                    <div class="font-medium mb-2">Scheduling coming soon</div>
+                    <p class="text-sm text-slate-500 mb-6">In the meantime, email me directly and I’ll send you available times.</p>
+                    
+                    <button onclick="openContactEmail('Strategy Call Request')"
+                            class="inline-block text-sm font-semibold bg-white border px-6 py-2.5 rounded-2xl hover:bg-slate-100 active:bg-slate-200">
+                        Email Sarka directly
+                    </button>
+                </div>
+                -->
+
+                <div class="text-[10px] text-center mt-5 text-slate-400">I typically respond within a few hours during business days.</div>
+            </div>
+            
+            <!-- Mobile close affordance -->
+            <div class="md:hidden bg-slate-50 px-6 py-4 border-t sticky bottom-0">
+                <button onclick="closeBookingModal()" 
+                        class="w-full text-sm font-semibold text-slate-600 py-2 active:text-slate-900">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE DETAIL MODAL -->
+    <div id="service-modal" onclick="if (event.target.id === 'service-modal') closeServiceModal()" class="hidden fixed inset-0 z-[100] bg-black/60 flex items-end md:items-center justify-center p-0 md:p-5">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full md:max-w-2xl md:rounded-3xl md:shadow-2xl h-[90vh] md:h-auto flex flex-col rounded-t-3xl overflow-hidden">
+            
+            <!-- Sticky Header with Close Button (especially important on mobile) -->
+            <div class="flex items-center justify-between px-6 py-4 border-b bg-white sticky top-0 z-10">
+                <div id="service-modal-icon" class="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0"></div>
+                <button onclick="closeServiceModal()" 
+                        class="w-10 h-10 flex items-center justify-center text-3xl text-slate-500 hover:text-slate-900 active:bg-slate-100 rounded-full -mr-2">
+                    ×
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6 pb-8">
+                <h3 id="service-modal-title" class="text-2xl md:text-3xl font-semibold tracking-tight pr-8"></h3>
+                <p id="service-modal-desc" class="mt-3 text-slate-600 text-[15px] leading-relaxed"></p>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm">
+                    <div>
+                        <div class="uppercase tracking-widest text-xs font-bold text-teal-700 mb-3" data-i18n="modal.deliverables">TYPICAL DELIVERABLES</div>
+                        <ul id="service-modal-deliverables" class="space-y-2 text-slate-600"></ul>
+                    </div>
+                    <div>
+                        <div class="uppercase tracking-widest text-xs font-bold text-teal-700 mb-3" data-i18n="modal.who_for">WHO THIS IS FOR</div>
+                        <div id="service-modal-audience" class="text-slate-600"></div>
+                        
+                        <div class="mt-6 uppercase tracking-widest text-xs font-bold text-teal-700 mb-3" data-i18n="modal.engagement">ENGAGEMENT LENGTH</div>
+                        <div id="service-modal-length" class="text-slate-600"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Action Bar -->
+            <div class="bg-slate-50 px-6 py-4 border-t flex items-center justify-between sticky bottom-0 z-10">
+                <button onclick="closeServiceModal(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                        class="text-sm font-semibold text-slate-600 hover:text-slate-900 active:text-teal-700 py-1" data-i18n="modal.discuss">Discuss this service →</button>
+                <button onclick="closeServiceModal(); openBookingModal()" 
+                        class="px-5 py-2.5 bg-teal-800 hover:bg-teal-900 text-white text-sm font-semibold rounded-2xl" data-i18n="modal.book_call">Book a call</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IN THE ROOM STORIES MODAL -->
+    <div id="room-story-modal" onclick="if (event.target.id === 'room-story-modal') closeRoomStoryModal()" class="hidden fixed inset-0 z-[110] bg-black/70 flex items-end md:items-center justify-center p-0 md:p-5">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full md:max-w-2xl md:rounded-3xl md:shadow-2xl h-[85vh] md:h-auto flex flex-col rounded-t-3xl overflow-hidden">
+            
+            <!-- Sticky Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b bg-white sticky top-0 z-10">
+                <h3 id="room-story-title" class="text-xl font-semibold tracking-tight pr-8"></h3>
+                <button onclick="closeRoomStoryModal()" 
+                        class="w-10 h-10 flex items-center justify-center text-3xl text-slate-500 hover:text-slate-900 active:bg-slate-100 rounded-full -mr-2">
+                    ×
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto">
+                <img id="room-story-image" alt="" class="w-full h-auto max-h-[70vh] md:max-h-[480px] object-contain">
+                <div class="p-6">
+                    <div id="room-story-text" class="text-[15px] leading-relaxed text-slate-700 space-y-4"></div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 px-6 py-4 border-t flex justify-end sticky bottom-0 z-10">
+                <button onclick="closeRoomStoryModal()" 
+                        class="px-6 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

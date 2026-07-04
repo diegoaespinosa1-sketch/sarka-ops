@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# No catch-all redirect needed for this multi-page static site.
+# Add specific redirects here only if required later.
+
+[forms]
+  # Formspree is handling the main contact form
+  # This is just for any native Netlify forms if added later

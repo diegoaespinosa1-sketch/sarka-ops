@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Most CRM projects in hospitality and service businesses fail to deliver. Here’s why — and the practical approach that actually works for multi-site operators.">
+    <meta name="author" content="Sarka Espinosa">
+    <title>Why Most CRM Projects Fail — And What To Do Instead | Sarka Espinosa</title>
+    
+    <meta property="og:title" content="Why Most CRM Projects Fail — And What To Do Instead">
+    <meta property="og:description" content="Technology is rarely the problem. The real issues are people, process, and strategy — and how to fix them in service businesses.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sarka-ops.com/insights/why-most-crm-projects-fail-and-what-to-do-instead/">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f766e'/%3E%3Ctext x='50' y='65' font-size='48' font-family='system-ui' fill='white' text-anchor='middle' font-weight='700'%3ES%3C/text%3E%3C/svg%3E">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        .prose {
+            max-width: 68ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .prose p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 1.25em;
+            color: #334155;
+        }
+        
+        .prose h2 {
+            font-size: 1.65rem;
+            line-height: 1.2;
+            margin-top: 2.25em;
+            margin-bottom: 0.75em;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        
+        .prose h3 {
+            font-size: 1.25rem;
+            line-height: 1.3;
+            margin-top: 1.75em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: #1e2937;
+        }
+        
+        .prose ul, .prose ol {
+            margin-bottom: 1.25em;
+            padding-left: 1.25em;
+        }
+        
+        .prose li {
+            margin-bottom: 0.5em;
+            font-size: 17px;
+            line-height: 1.65;
+            color: #334155;
+        }
+        
+        .article-meta {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .pull-quote {
+            font-size: 1.35rem;
+            line-height: 1.4;
+            font-weight: 500;
+            color: #0f172a;
+            border-left: 4px solid #0f766e;
+            padding-left: 1.25rem;
+            margin: 2rem 0;
+        }
+        
+        .key-stat {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+        }
+        
+        .nav-link.active {
+            color: #0f766e;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-3">
+                    <a href="/" class="flex items-center gap-x-3">
+                        <div class="w-9 h-9 rounded-2xl bg-teal-800 flex items-center justify-center">
+                            <span class="text-white font-bold text-2xl tracking-tighter">S</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold tracking-tight text-xl">Sarka Espinosa</div>
+                            <div class="text-[10px] text-slate-500 -mt-1">STRATEGIC ADVISOR</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-9 text-sm">
+                    <a href="../../index.html#services" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">How I Help</a>
+                    <a href="../../index.html#about" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">About</a>
+                    <a href="../../index.html#results" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">Results</a>
+                    <a href="../../insights/" class="nav-link active text-teal-700">Insights</a>
+                    <a href="../../index.html#contact" class="nav-link text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-3">
+                    <button onclick="window.location.href='../../index.html#contact'" 
+                            class="px-5 py-2 text-sm font-semibold text-teal-800 hover:text-teal-900 transition-colors">
+                        Get in touch
+                    </button>
+                    <button onclick="openBookingModalFromArticle()" 
+                            class="px-5 py-2.5 bg-teal-800 hover:bg-teal-900 active:bg-teal-950 transition text-white text-sm font-semibold rounded-2xl">
+                        Book a call
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm">
+                <a href="../../index.html#services" class="text-slate-600 hover:text-slate-900 py-1">How I Help</a>
+                <a href="../../index.html#about" class="text-slate-600 hover:text-slate-900 py-1">About</a>
+                <a href="../../index.html#results" class="text-slate-600 hover:text-slate-900 py-1">Results</a>
+                <a href="../../insights/" class="text-teal-700 font-medium py-1">Insights</a>
+                <a href="../../index.html#contact" class="text-slate-600 hover:text-slate-900 py-1">Contact</a>
+                <div class="pt-4 border-t flex flex-col gap-y-3">
+                    <button onclick="window.location.href='../../index.html#contact'" class="text-left text-slate-600 hover:text-slate-900 py-1">Get in touch</button>
+                    <button onclick="openBookingModalFromArticle()" class="w-full px-5 py-2.5 bg-teal-800 text-white text-sm font-semibold rounded-2xl">Book a 30-min call</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ARTICLE HEADER -->
+    <header class="pt-20 pb-8 md:pt-24 md:pb-10 border-b border-slate-200 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="flex items-center gap-x-3 mb-5">
+                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-[1px] uppercase bg-amber-100 text-amber-800 rounded-full">Customer Experience</span>
+                <span class="text-xs text-slate-400">•</span>
+                <span class="text-xs text-slate-500">13 min read</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tighter leading-none">Why Most CRM Projects Fail — And What To Do Instead</h1>
+            
+            <p class="mt-5 text-xl md:text-2xl text-slate-600 leading-tight">
+                Technology is rarely the problem. In hospitality and service businesses, the real failures are almost always about people, process, and strategy.
+            </p>
+            
+            <div class="mt-8 flex items-center gap-x-4">
+                <div class="w-11 h-11 rounded-full overflow-hidden ring-1 ring-slate-200">
+                    <img src="../../assets/profile-sarka.jpg" alt="Sarka Espinosa" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <div class="font-semibold tracking-tight">Sarka Espinosa</div>
+                    <div class="text-sm text-slate-500">Strategic Advisor, Customer Experience &amp; Operations</div>
+                </div>
+            </div>
+            
+            <div class="mt-4 text-xs text-slate-400">Published 5 March 2026 • Geelong, Australia</div>
+        </div>
+    </header>
+
+    <!-- ARTICLE BODY -->
+    <article class="max-w-3xl mx-auto px-6 pt-10 pb-16">
+        <div class="prose">
+            
+            <p>Walk into almost any mid-sized hotel group, facilities provider, or multi-site service business and you’ll find a CRM story that goes something like this:</p>
+            
+            <p>“We spent a lot of money on [Salesforce / Zoho / [insert platform]]. The team was excited at the start. Now most people don’t use it, the data is a mess, and we’re not seeing the revenue or guest loyalty lift we were promised.”</p>
+            
+            <div class="key-stat my-8">
+                <div class="text-sm font-semibold text-teal-700 tracking-wider">THE REALITY</div>
+                <div class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">50–70% of CRM implementations fail to deliver the expected benefits.</div>
+                <div class="mt-2 text-sm text-slate-600">In hospitality and service businesses the number is often even higher because of high staff turnover, fragmented systems, and the mistaken belief that technology alone will fix the customer experience. (Forrester, industry analyses 2024–2025)</div>
+            </div>
+            
+            <p>The technology itself is rarely the villain. The failures are almost always human and operational.</p>
+            
+            <h2>Why CRM projects collapse in service businesses</h2>
+            
+            <h3>1. It was treated as an IT project, not a business transformation</h3>
+            <p>Most CRM failures start before a single login is created. Leadership buys the software because “we need a CRM” or because a competitor has one, without defining what success actually looks like in their specific operation.</p>
+            
+            <p>In hospitality this often means bolting a generic CRM onto a Property Management System (PMS) with no clear plan for how front desk, housekeeping, sales, and marketing will actually use the data together. The result is another expensive system that sits alongside all the others.</p>
+            
+            <h3>2. Frontline adoption was never taken seriously</h3>
+            <p>This is the single biggest killer in service businesses.</p>
+            
+            <p>High turnover environments (35–50%+ in many hospitality and facilities roles) make sustained training almost impossible. When staff see the CRM as extra admin work that doesn’t help them serve the guest faster or better, they quietly stop using it. Within months the data is stale and the system becomes a very expensive address book.</p>
+            
+            <p>Forrester research consistently shows poor user adoption as the top reason CRM projects underperform. In service operations with seasonal and casual workers, this problem is magnified.</p>
+            
+            <h3>3. The processes were never fixed before the technology went in</h3>
+            <p>You cannot automate a broken process and expect good results.</p>
+            
+            <p>Many operators try to implement CRM on top of unclear sales handoffs, inconsistent guest recovery protocols, or fragmented data ownership between departments. The technology simply exposes (and sometimes accelerates) the existing chaos.</p>
+            
+            <h3>4. Data quality was an afterthought</h3>
+            <p>Bad data in hospitality is particularly painful because the guest journey is multi-channel and emotional. When the same person appears in the system under three different emails with conflicting preferences, any attempt at personalisation backfires.</p>
+            
+            <p>Without disciplined data governance from day one, even the most sophisticated CRM becomes a source of frustration rather than insight.</p>
+            
+            <h2>What actually works</h2>
+            
+            <p>The operators who get real value from their CRM investment do a few things differently.</p>
+            
+            <p><strong>They start with outcomes, not features.</strong> Before choosing a platform they define two or three specific business results they want (e.g., increase direct bookings by X%, improve first-contact resolution on maintenance requests, raise repeat guest rate by Y%). Everything else flows from there.</p>
+            
+            <p><strong>They fix the process before they buy the technology.</strong> This often means mapping the actual guest or client journey across departments and creating simple, consistent workflows first. Only then do they configure the CRM to support those workflows.</p>
+            
+            <p><strong>They treat adoption as a leadership issue, not a training issue.</strong> The best implementations have visible executive sponsorship, CRM champions on the floor, and clear consequences (and recognition) tied to usage. They also choose tools that are genuinely usable on a phone during a busy shift.</p>
+            
+            <p><strong>They integrate ruthlessly or not at all.</strong> Rather than trying to connect every system on day one, successful operators focus on the two or three integrations that deliver the most value (typically PMS + CRM + a clean guest profile layer) and do those exceptionally well.</p>
+            
+            <p><strong>They measure the right things.</strong> Not “how many fields are completed” but real outcomes: direct revenue lift, complaint resolution speed, guest effort scores, and staff time saved.</p>
+            
+            <div class="pull-quote">
+                “A CRM is not a strategy. It is a tool that only becomes valuable once the strategy, processes, and people are aligned.”
+            </div>
+            
+            <h2>A practical path forward for service businesses</h2>
+            
+            <p>If you’re considering (or recovering from) a CRM project, here is the sequence I recommend:</p>
+            
+            <ol>
+                <li><strong>Define the three outcomes that actually matter.</strong> Tie them to revenue, retention, or operational efficiency. Be specific.</li>
+                <li><strong>Audit your current processes and data.</strong> Where are the handoffs broken? Where is guest information duplicated or missing? Fix the biggest issues before you configure anything.</li>
+                <li><strong>Design the workflows first.</strong> Decide exactly how a lead becomes a booking, how a complaint is recovered, and how guest preferences are captured and actioned — on paper or in a simple shared document.</li>
+                <li><strong>Choose the platform based on adoption reality, not features.</strong> In high-turnover environments, simplicity and mobile experience usually beat sophistication.</li>
+                <li><strong>Build adoption into the operating rhythm.</strong> Make CRM usage part of daily briefings, shift handovers, and performance conversations. Appoint visible champions on the floor.</li>
+                <li><strong>Start small and prove value quickly.</strong> Pilot one clear use case (for example, recovering complaints within 24 hours or increasing pre-arrival upsells) before rolling out more broadly.</li>
+            </ol>
+            
+            <h2>The bottom line</h2>
+            
+            <p>Most CRM disappointment in service businesses comes from expecting software to solve problems that are fundamentally about leadership, process discipline, and change management.</p>
+            
+            <p>When those foundations are in place, even a relatively simple CRM can become a genuine competitive advantage — driving more direct revenue, better guest experiences, and operations that actually scale without constant firefighting.</p>
+            
+            <p>The technology is rarely the missing piece. The missing piece is almost always the operating system around it.</p>
+            
+        </div>
+        
+        <!-- AUTHOR + CTA BOX -->
+        <div class="mt-14 border-t border-slate-200 pt-10">
+            <div class="flex flex-col md:flex-row gap-8 md:items-center">
+                <div class="flex-shrink-0">
+                    <img src="../../assets/profile-sarka.jpg" alt="Sarka Espinosa" class="w-20 h-20 rounded-2xl object-cover ring-1 ring-slate-200">
+                </div>
+                <div class="flex-1">
+                    <div class="font-semibold text-xl tracking-tight">Sarka Espinosa</div>
+                    <p class="mt-1 text-slate-600">I help ambitious service businesses build the systems, leadership capability, and customer experiences that match the level of their ambition.</p>
+                    
+                    <div class="mt-4 flex flex-wrap gap-3">
+                        <button onclick="window.location.href='../../index.html#contact'" 
+                                class="px-6 py-2.5 text-sm font-semibold border border-slate-300 hover:bg-slate-50 rounded-2xl transition">
+                            Get in touch
+                        </button>
+                        <button onclick="openBookingModalFromArticle()" 
+                                class="px-6 py-2.5 text-sm font-semibold bg-teal-800 hover:bg-teal-900 text-white rounded-2xl transition">
+                            Book a 30-minute strategy call
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- More Insights -->
+        <div class="mt-16 pt-8 border-t">
+            <div class="uppercase tracking-[1.5px] text-xs font-semibold text-teal-700 mb-4">MORE FROM THE INSIGHTS SERIES</div>
+            
+            <div class="grid md:grid-cols-2 gap-5">
+                <a href="../the-7-sops-every-multi-site-service-business-needs-in-2026/" class="group block bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 transition">
+                    <div class="text-xs uppercase tracking-wider font-semibold text-amber-700">OPERATIONS</div>
+                    <h4 class="mt-3 font-semibold text-xl tracking-tight group-hover:text-teal-700 transition">The 7 SOPs Every Multi-Site Service Business Needs in 2026</h4>
+                    <div class="mt-2 text-sm text-teal-700 font-medium">Read now →</div>
+                </a>
+                
+                <a href="../turning-frontline-staff-into-your-best-cx-asset/" class="group block bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 transition">
+                    <div class="text-xs uppercase tracking-wider font-semibold text-amber-700">LEADERSHIP</div>
+                    <h4 class="mt-3 font-semibold text-xl tracking-tight group-hover:text-teal-700 transition">Turning Frontline Staff into Your Best CX Asset</h4>
+                    <div class="mt-2 text-sm text-teal-700 font-medium">Read now →</div>
+                </a>
+            </div>
+        </div>
+        
+    </article>
+
+    <!-- FINAL CTA -->
+    <div class="bg-slate-900 py-12 md:py-14 text-white">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <div class="text-sm uppercase tracking-[2px] text-teal-400 mb-3">Thinking about your next CRM or guest experience system?</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Let’s make sure the technology actually serves the operation.</h2>
+            
+            <button onclick="openBookingModalFromArticle()" 
+                    class="mt-8 px-8 py-3.5 bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-2xl text-base transition">
+                Book your free strategy call
+            </button>
+            <p class="mt-3 text-xs text-slate-400">30 minutes • No obligation • I’ll send calendar options directly</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-6 text-sm">
+                <div class="text-slate-500">
+                    © <span id="year"></span> Sarka Espinosa. All rights reserved.
+                </div>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-slate-600">
+                    <a href="../../privacy.html" class="hover:text-slate-900">Privacy</a>
+                    <a href="../../terms.html" class="hover:text-slate-900">Terms</a>
+                    <a href="https://www.linkedin.com/in/sarka-espinosa/" target="_blank" class="hover:text-slate-900">LinkedIn</a>
+                    <a href="../../index.html#contact" class="hover:text-slate-900">Contact</a>
+                </div>
+                <div class="text-xs text-slate-400">
+                    Geelong, Victoria, Australia
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" onclick="if (event.target.id === 'booking-modal') closeBookingModalFromArticle()" class="hidden fixed inset-0 z-[100] bg-black/60 flex items-end md:items-center justify-center p-0 md:p-5">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full md:max-w-lg md:rounded-3xl md:shadow-2xl h-[82vh] md:h-auto flex flex-col rounded-t-3xl overflow-hidden">
+            <div class="md:hidden flex justify-center pt-3 pb-1">
+                <div class="w-10 h-1 rounded-full bg-slate-300"></div>
+            </div>
+            <div class="px-6 pt-3 md:pt-7 pb-5 bg-slate-50 border-b">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="font-semibold text-2xl tracking-tight">Book a Strategy Call</div>
+                        <div class="text-sm text-slate-600 mt-1">30 minutes • Free • No obligation</div>
+                    </div>
+                    <button onclick="closeBookingModalFromArticle()" class="w-9 h-9 flex items-center justify-center text-3xl text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full -mr-1 -mt-1">×</button>
+                </div>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-6 md:p-7">
+                <div class="text-sm mb-4 text-slate-600">Choose a time that works for you. I’ll send a calendar invite immediately.</div>
+                
+                <!-- Calendly embed - replace the data-url with your real Calendly link -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+                <!-- Fallback if embed not ready -->
+                <!-- 
+                <!-- Calendly embed -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                -->
+
+                <div class="text-[10px] text-center mt-5 text-slate-400">I typically respond within a few hours during business days.</div>
+            </div>
+            
+            <div class="md:hidden bg-slate-50 px-6 py-4 border-t sticky bottom-0">
+                <button onclick="closeBookingModalFromArticle()" class="w-full text-sm font-semibold text-slate-600 py-2 active:text-slate-900">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>`;
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>`;
+                }
+            });
+        }
+        
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (!navbar) return;
+            if (window.scrollY > 80) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+        
+        function openBookingModalFromArticle() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBookingModalFromArticle() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const booking = document.getElementById('booking-modal');
+                if (!booking.classList.contains('hidden')) {
+                    closeBookingModalFromArticle();
+                }
+            }
+        });
+        
+        console.log('%c[Insights] Article loaded: Why Most CRM Projects Fail', 'color:#64748b');
+    </script>
+</body>
+</html>

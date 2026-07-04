@@ -1,0 +1,252 @@
+/* Sarka Espinosa Consulting - Custom Styles */
+
+/* Additional refinements beyond Tailwind + inline styles */
+
+:root {
+  --accent-teal: #0f766e;
+  --accent-amber: #b45309;
+}
+
+/* Better focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* Navbar transition polish */
+nav {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card hover lift is already in HTML inline, but we can enhance */
+.service-card {
+  will-change: transform;
+}
+
+/* Modal backdrop click hint */
+#booking-modal,
+#service-modal {
+  animation: fadeInBackdrop 0.15s ease forwards;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Form input polish */
+input, textarea {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+}
+
+/* Testimonial quote styling enhancement */
+.testimonial p {
+  font-feature-settings: "ss01";
+}
+
+/* Print styles (good for proposals) */
+@media print {
+  nav, footer, button, #booking-modal, #service-modal {
+    display: none !important;
+  }
+  .max-w-7xl {
+    max-width: 100% !important;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .service-card {
+    border-color: #334155;
+  }
+  
+  .nav-link:after {
+    height: 3px;
+  }
+}
+
+/* Subtle grid texture on dark hero (already handled inline but available) */
+.dark-grid {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ============================================
+   MOBILE UX IMPROVEMENTS (small screens)
+   - Easier tap targets on service cards
+   - Better bottom-sheet modals + swipe affordance
+   - Improved spacing, typography, safe areas
+   ============================================ */
+
+/* Service cards — significantly easier to tap on phones */
+@media (max-width: 767px) {
+  .service-card {
+    min-height: 178px;
+    padding: 1.5rem 1.25rem; /* 24px 20px — generous hit area */
+    border-radius: 20px;
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  
+  .service-card p {
+    font-size: 14.5px;
+    line-height: 1.35;
+  }
+  
+  /* Stronger active press feedback on touch */
+  .service-card:active {
+    transform: scale(0.985);
+    background-color: #f8fafc;
+    border-color: #14b8a6;
+  }
+}
+
+/* Modal bottom sheets — polish for mobile */
+@media (max-width: 767px) {
+  .modal {
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 30px -8px rgb(0 0 0 / 0.18), 0 -1px 4px -1px rgb(0 0 0 / 0.1);
+    /* Support iOS safe area */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  
+  /* Larger, more reliable close buttons (44px+ target) */
+  #service-modal .modal button,
+  #room-story-modal .modal button,
+  #booking-modal .modal button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* Drag handle visual already in HTML, but ensure spacing */
+  .modal .w-10.h-1 {
+    margin-bottom: 2px;
+  }
+  
+  /* Scroll containers inside modals */
+  .modal .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Tighter but still comfortable inner spacing on very small screens */
+  #service-modal .modal .p-6,
+  #room-story-modal .modal .p-6,
+  #booking-modal .modal .p-6 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Overall small-screen spacing & typography refinements */
+@media (max-width: 640px) {
+  /* Section padding — less wasted vertical space */
+  #services, #results, #about, #how, #insights, #contact {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Hero headline breathing */
+  .max-w-7xl .text-5xl {
+    font-size: 2.35rem !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.025em;
+  }
+  
+  .max-w-7xl .text-6xl {
+    font-size: 2.65rem !important;
+    line-height: 1.0 !important;
+  }
+  
+  /* Section headers */
+  .section-header {
+    font-size: 1.85rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  /* Tighter grid gaps on phones */
+  .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
+    gap: 0.85rem !important;
+  }
+  
+  /* Results stats — stack nicely */
+  .grid.grid-cols-2.md\\:grid-cols-4 {
+    gap: 1rem 0.75rem;
+  }
+  
+  /* Contact form inputs larger tap targets */
+  input, textarea {
+    font-size: 16px !important; /* prevents iOS zoom */
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  
+  /* Footer tighter */
+  footer .max-w-7xl {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Medium-small tablets and large phones (641-767px) */
+@media (min-width: 641px) and (max-width: 767px) {
+  .service-card {
+    min-height: 168px;
+    padding: 1.5rem;
+  }
+}
+
+/* Ensure modals never feel cramped on the tallest phones */
+@media (max-height: 700px) {
+  #service-modal .modal,
+  #room-story-modal .modal,
+  #booking-modal .modal {
+    height: 94vh !important;
+  }
+}
+
+/* Very small phones (e.g. iPhone SE) — extra breathing room */
+@media (max-width: 360px) {
+  .service-card {
+    padding: 1.35rem 1.1rem;
+    min-height: 166px;
+  }
+  
+  .service-card h3 {
+    font-size: 19px;
+  }
+}
+
+/* Accessibility: larger tap targets everywhere on touch */
+@media (hover: none) and (pointer: coarse) {
+  button, .service-card, a.nav-link, .modal button {
+    min-height: 44px;
+  }
+}
