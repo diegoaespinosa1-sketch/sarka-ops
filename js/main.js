@@ -125,6 +125,14 @@ const testimonials = [
         photoCaption: "Handwritten thank you note from Surf Hotel after onboarding new product lines"
     },
     {
+        quote: "When it comes to results, Sarka delivers. We’ve opened different markets together — a real pleasure to work with her.",
+        name: "Paul",
+        role: "Regional Account Manager, Victoria & Tasmania",
+        company: "Huhtamaki",
+        photo: "assets/huhtamaki-paul.jpg",
+        photoCaption: "On site with Huhtamaki — warehouse operations, Victoria"
+    },
+    {
         quote: "Sarka structured our CX onboarding and built a complete end-to-end system that has allowed us to improve customer retention.",
         name: "M Kashmire",
         role: "Sales Manager",
@@ -151,22 +159,20 @@ function initTestimonials() {
     if (!container) return;
 
     container.innerHTML = testimonials.map((t, index) => `
-        <div class="testimonial bg-white border border-slate-200 rounded-3xl p-8 flex flex-col shadow-sm" data-index="${index}">
+        <div class="testimonial bg-slate-50 border border-slate-200/80 rounded-2xl p-7 md:p-8 flex flex-col hover:border-slate-300 hover:shadow-md transition-all duration-200" data-index="${index}">
             <div class="flex-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-teal-600/70 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                </svg>
+                <div class="text-teal-700/40 text-4xl font-serif leading-none mb-3">“</div>
                 <p class="text-[15px] leading-relaxed text-slate-700">“${t.quote}”</p>
             </div>
-            <div class="mt-8 pt-5 border-t flex items-center gap-x-3">
+            <div class="mt-8 pt-5 border-t border-slate-200 flex items-center gap-x-3">
                 ${t.photo 
-                    ? `<img src="${t.photo}" alt="${t.name}" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 ring-1 ring-slate-200">` 
-                    : `<div class="w-11 h-11 rounded-full bg-slate-200 flex-shrink-0 flex items-center justify-center text-xs font-bold text-slate-500">${t.name.split(' ').map(n => n[0]).join('')}</div>`
+                    ? `<img src="${t.photo}" alt="${t.name}" class="w-14 h-14 rounded-xl object-cover object-center flex-shrink-0 ring-1 ring-slate-200" width="56" height="56">` 
+                    : `<div class="w-11 h-11 rounded-full bg-slate-900 text-white flex-shrink-0 flex items-center justify-center text-xs font-bold tracking-wide">${t.name.split(' ').map(n => n[0]).join('')}</div>`
                 }
                 <div>
-                    <div class="font-semibold text-sm tracking-tight">${t.name}</div>
+                    <div class="font-semibold text-sm tracking-tight text-slate-900">${t.name}</div>
                     <div class="text-xs text-slate-500">${t.role}${t.role && t.company ? ', ' : ''}${t.company}</div>
-                    ${t.photoCaption ? `<div class="text-[10px] text-teal-700 mt-0.5">${t.photoCaption}</div>` : ''}
+                    ${t.photoCaption ? `<div class="text-[10px] text-teal-700 mt-0.5 leading-snug">${t.photoCaption}</div>` : ''}
                 </div>
             </div>
         </div>
@@ -260,7 +266,7 @@ const servicesData = [
             "Full operations audit with exit-valuation lens",
             "Complete SOP library and knowledge transfer systems",
             "Leadership development and successor readiness roadmap",
-            "Customer experience standardization for consistency and premium valuation",
+            "Customer experience standardisation for consistency and premium valuation",
             "Owner-dependency reduction plan and delegation frameworks",
             "Ongoing advisory through the transition period"
         ],
@@ -461,6 +467,11 @@ const translations = {
         "hero.subtitle": "I help ambitious owners of service businesses build operations that scale, perform at the highest level, and are fully prepared for exit or major growth — without depending on you.",
         "hero.cta_book": "Book a Strategy Call",
         "hero.cta_rooms": "See the Rooms I’ve Been In",
+        "hero.point1": "Operations that run without the owner",
+        "hero.point2": "Systems buyers trust in due diligence",
+        "hero.point3": "Hard truths, clear 90-day execution",
+        "hero.portrait_sub": "Exit-ready operations · Service businesses",
+        "hero.strip_link": "JT Foxx · Tim Gannon · Joe Foster · more",
         "hero.trust": "Geelong, Australia • Working with service business leaders across Australia",
 
         // In the Room
@@ -471,7 +482,7 @@ const translations = {
         // Services section
         "services.label": "HOW I HELP",
         "services.title": "Strategic support for ambitious service businesses",
-        "services.desc": "The no-nonsense support for leaders ready to face the hard truths and build organizations that actually scale and perform.",
+        "services.desc": "The no-nonsense support for leaders ready to face the hard truths and build organisations that actually scale and perform.",
 
         // Results
         "results.label": "CLIENT RESULTS",
@@ -571,7 +582,7 @@ const translations = {
         "about.label": "MY STORY",
         "about.title": "14 years operating at the level where excellence is non-negotiable.",
         "about.p1": "My career has taken me from high-volume hotels on the Gold Coast to multi-site facilities services in regional Victoria — leading sales, procurement, and operations teams that consistently delivered the best results in their businesses.",
-        "about.p2": "Along the way, I’ve had the privilege of spending time with founders and operators who have built significant enterprises. These experiences have shaped how I think about scaling, leadership, and what it actually takes to build organizations that perform at a high level.",
+        "about.p2": "Along the way, I’ve had the privilege of spending time with founders and operators who have built significant enterprises. These experiences have shaped how I think about scaling, leadership, and what it actually takes to build organisations that perform at a high level.",
         "about.p3": "Today I work with a small number of ambitious service business leaders who want practical, no-fluff help building the systems, teams, and customer experiences that match the level of their ambition — whether through full transformations, operational overhauls, or ongoing strategic guidance as a fractional partner.",
         "about.languages_label": "Languages",
         "about.languages": "Czech (native)<br>Spanish (fluent)<br>English (fluent)<br>French (conversational)",
@@ -614,7 +625,7 @@ const translations = {
             `<p>JT Foxx is one of the most recognised global entrepreneurs and mastermind leaders of our time — building platforms that connect serious business owners, raise capital, and scale companies to seven and eight figures.</p><p>We work in the same high-level rooms and continue to collaborate. His positioning, network, and execution set a standard for what serious entrepreneurship looks like — and that standard directly shapes how I support ambitious service business owners.</p><p>More joint work is ahead.</p>`,
             `<p>John Catsimatis is a self-made billionaire who has built and scaled multiple significant enterprises across industries, creating substantial wealth and long-term value through disciplined execution and strategic vision.</p><p>Alongside him stands his wife, who has been an integral part of that journey. Together they represent a powerful example of sustained business success at the highest level — in rooms that also include leaders like JT Foxx.</p><p>Being in this room provided direct proximity to the mindset and track record of individuals who have repeatedly delivered exceptional, result-driven outcomes over decades.</p>`,
             `<p>Tim Gannon is the co-founder of Outback Steakhouse, one of the most iconic and successful casual dining restaurant chains in the world. He helped scale the concept from a single restaurant into a global empire with hundreds of locations.</p><p>Being in the room with Tim Gannon alongside JT Foxx offered direct access to the mindset and strategies behind building enduring, scalable service businesses that deliver exceptional results year after year.</p>`,
-            `<p>Reggie Batts is a high-level collaborator I work with as a peer on consultancy and events.</p><p>I support Reggie with consultancy and event work — and he has been openly grateful for that contribution. We operate as equals: building rooms, creating value, and delivering real outcomes for serious people in business.</p><p>That kind of peer collaboration is the standard I bring to every engagement.</p><p><a href="https://www.instagram.com/reggiebatts/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-teal-700 font-semibold hover:text-teal-900">Reggie Batts on Instagram →</a></p>`,
+            `<p>Reggie Batts is a high-level collaborator I work with as a peer on consultancy and events.</p><p>I support Reggie with consultancy and event work — and he has been openly grateful for that contribution. We operate as equals: building rooms, creating value, and delivering real outcomes for serious people in business.</p><p>That kind of peer collaboration is the standard I bring to every engagement.</p>`,
             `<p>Joe Foster co-founded Reebok and scaled it from a small British company into one of the world’s leading global athletic brands, competing directly with Nike and Adidas on an international stage.</p><p>The brand reached billions in revenue, became a cultural icon, and was eventually acquired in a multi-billion-dollar transaction.</p><p>Sitting with the man who helped build that level of global commercial success provides rare perspective on what it takes to create enduring, large-scale businesses.</p>`,
             `<p>Tom Brady is the most decorated quarterback in NFL history, with a record 7 Super Bowl championships — the highest achievement in American team sports.</p><p>Beyond athletics, he built a multi-hundred-million-dollar personal brand and business empire, including the TB12 wellness platform and strategic investments in major companies.</p><p>Proximity to someone who has consistently delivered world-class results across two decades at the absolute highest level offers powerful insight into sustained high performance and brand building at scale.</p>`,
             `<p>Francie is a key connector and strategist who curates high-caliber events bringing together billionaires, entrepreneurs, and ambitious business owners.</p><p>We collaborate on multiple events focused on lead generation, deal flow, and strategic marketing. My role involves coordinating the right rooms and ensuring participants walk away with meaningful opportunities and relationships.</p><p>These environments have given me direct insight into what it takes to create real value at the highest levels of business and entrepreneurship.</p>`
@@ -639,6 +650,11 @@ const translations = {
         "hero.subtitle": "Ayudo a propietarios ambiciosos de negocios de servicios a construir operaciones que escalan, operan al más alto nivel y están completamente preparadas para una salida o un crecimiento importante — sin depender de usted.",
         "hero.cta_book": "Agenda una Llamada Estratégica",
         "hero.cta_rooms": "Conozca las salas en las que he estado",
+        "hero.point1": "Operaciones que funcionan sin el propietario",
+        "hero.point2": "Sistemas en los que confían los compradores en la due diligence",
+        "hero.point3": "Verdades difíciles, ejecución clara en 90 días",
+        "hero.portrait_sub": "Operaciones preparadas para la salida · Negocios de servicios",
+        "hero.strip_link": "JT Foxx · Tim Gannon · Joe Foster · más",
         "hero.trust": "Geelong, Australia • Trabajando con líderes de negocios de servicios en toda Australia",
 
         "inroom.label": "EN LA SALA",
@@ -686,18 +702,22 @@ const translations = {
         "booking.subtitle": "30 minutos • Gratis • Sin obligación",
         "service.learn_more": "Conocer más",
         roomTitles: [
-            "Con el empresario multimillonario John Catsimatis y su esposa en Nueva York",
-            "Con JT Foxx",
+            "Con JT Foxx — emprendedor global y líder de masterminds",
+            "Con JT Foxx y el empresario multimillonario John Catsimatis en Nueva York",
+            "Con Tim Gannon y JT Foxx",
+            "Con Reggie Batts — colaboración en consultoría y eventos",
             "Con Joe Foster, cofundador de Reebok",
             "Junto a Tom Brady en Melbourne",
-            "Con Tim Gannon, cofundador de Outback Steakhouse, y JT Foxx"
+            "Con Francie en eventos de alto nivel para multimillonarios, emprendedores y dueños de negocio"
         ],
         roomStories: [
-            `<p>John Catsimatis es un multimillonario hecho a sí mismo que ha construido y escalado múltiples empresas significativas en diversas industrias, creando una riqueza sustancial y valor a largo plazo a través de una ejecución disciplinada y visión estratégica.</p><p>A su lado está su esposa, quien ha sido parte integral de ese viaje. Juntos representan un poderoso ejemplo de éxito empresarial sostenido al más alto nivel.</p><p>Estar en esta sala me permitió tener proximidad directa a la mentalidad y trayectoria de personas que han entregado resultados excepcionales durante décadas.</p>`,
-            `<p>JT Foxx ha construido algunos de los eventos empresariales más grandes y plataformas de alto nivel del mundo, creando espacios donde propietarios serios de negocios se conectan, levantan capital y escalan a siete y ocho cifras.</p><p>A través de sus plataformas ha ayudado a miles de emprendedores a construir empresas significativas y generar riqueza real mediante relaciones estratégicas y marcos de crecimiento probados.</p><p>La cercanía a este nivel de red y ejecución ofrece una visión directa de lo que se requiere para operar y escalar en los más altos niveles del emprendimiento.</p>`,
-            `<p>Joe Foster cofundó Reebok y la escaló desde una pequeña empresa británica hasta una de las marcas deportivas líderes a nivel mundial, compitiendo directamente con Nike y Adidas en el escenario internacional.</p><p>La marca alcanzó miles de millones de dólares en ingresos, se convirtió en un ícono cultural y fue adquirida en una transacción multimillonaria.</p><p>Sentarse con el hombre que ayudó a construir ese nivel de éxito comercial global brinda una perspectiva única sobre cómo crear negocios duraderos y de gran escala.</p>`,
-            `<p>Tom Brady es el quarterback más condecorado en la historia de la NFL, con un récord de 7 campeonatos de Super Bowl — el logro más alto en los deportes de equipo en Estados Unidos.</p><p>Más allá del deporte, construyó un imperio personal de marca y negocios de cientos de millones de dólares, incluyendo la plataforma de bienestar TB12 e inversiones estratégicas en grandes compañías.</p><p>La cercanía a alguien que ha entregado consistentemente resultados de clase mundial durante dos décadas en el nivel más alto ofrece una visión poderosa sobre el rendimiento sostenido y la construcción de marcas a escala.</p>`,
-            `<p>Tim Gannon es el cofundador de Outback Steakhouse, una de las cadenas de restaurantes casuales más icónicas y exitosas del mundo. Ayudó a escalar el concepto desde un solo restaurante hasta un imperio global con cientos de ubicaciones, entregando calidad consistente y una poderosa experiencia de marca a gran escala.</p><p>Su profunda experiencia en operaciones de hospitalidad, cultura de equipo y sistemas repetibles convirtió una idea audaz en una historia de éxito multimillonaria que ha influido en toda la industria de servicios.</p><p>Estar en la sala con Tim Gannon junto a JT Foxx ofreció acceso directo a la mentalidad y estrategias detrás de construir negocios de servicios escalables y duraderos que entregan resultados excepcionales año tras año.</p>`
+            `<p>JT Foxx es uno de los emprendedores globales y líderes de masterminds más reconocidos — construye plataformas donde dueños serios se conectan, levantan capital y escalan a siete y ocho cifras.</p><p>Trabajamos en las mismas salas de alto nivel y seguimos colaborando. Su posicionamiento, red y ejecución marcan el estándar de lo que es el emprendimiento serio — y ese estándar moldea cómo apoyo a dueños de negocios de servicios ambiciosos.</p><p>Hay más trabajo conjunto por delante.</p>`,
+            `<p>John Catsimatis es un multimillonario hecho a sí mismo que ha construido y escalado múltiples empresas significativas, creando riqueza y valor a largo plazo con ejecución disciplinada y visión estratégica.</p><p>Junto a él, su esposa ha sido parte integral de ese camino. Representan el éxito empresarial sostenido al más alto nivel — en salas que también incluyen a líderes como JT Foxx.</p><p>Estar en esa sala dio proximidad directa a la mentalidad de quienes entregan resultados excepcionales durante décadas.</p>`,
+            `<p>Tim Gannon es cofundador de Outback Steakhouse, una de las cadenas de restaurantes casuales más icónicas del mundo. Escalaron el concepto de un restaurante a un imperio global.</p><p>Estar en la sala con Tim Gannon junto a JT Foxx ofreció acceso directo a la mentalidad y estrategias detrás de negocios de servicios escalables y durables.</p>`,
+            `<p>Reggie Batts es un colaborador de alto nivel con quien trabajo como par en consultoría y eventos.</p><p>Apoyo a Reggie con consultoría y trabajo de eventos — y ha sido abiertamente agradecido por esa contribución. Operamos como iguales: creando salas, valor y resultados reales para personas serias en los negocios.</p><p>Ese tipo de colaboración entre pares es el estándar que llevo a cada engagement.</p>`,
+            `<p>Joe Foster cofundó Reebok y la escaló desde una pequeña empresa británica hasta una de las marcas deportivas líderes a nivel mundial.</p><p>La marca alcanzó miles de millones en ingresos y fue adquirida en una transacción multimillonaria.</p><p>Sentarse con quien ayudó a construir ese éxito comercial global da una perspectiva rara sobre negocios de gran escala.</p>`,
+            `<p>Tom Brady es el quarterback más condecorado en la historia de la NFL, con 7 Super Bowls.</p><p>Más allá del deporte, construyó un imperio de marca y negocios de cientos de millones de dólares.</p><p>La cercanía a alguien que entrega resultados de clase mundial durante décadas ofrece una visión poderosa del alto rendimiento sostenido.</p>`,
+            `<p>Francie es una conectora y estratega clave que cura eventos de alto calibre con multimillonarios, emprendedores y dueños ambiciosos.</p><p>Colaboramos en múltiples eventos de lead generation, deal flow y marketing estratégico.</p><p>Estos entornos dan una visión directa de cómo crear valor real en los niveles más altos del negocio.</p>`
         ],
         readStory: "Leer historia →",
         moreMoments: "Más momentos de salas de alto nivel disponibles a solicitud.",
@@ -826,6 +846,11 @@ const translations = {
         "hero.subtitle": "J'aide les propriétaires ambitieux d'entreprises de services à bâtir des opérations qui s'échelonnent, performent au plus haut niveau et sont pleinement préparées pour une sortie ou une croissance majeure — sans dépendre de vous.",
         "hero.cta_book": "Réserver un Appel Stratégique",
         "hero.cta_rooms": "Voir les salles où j'ai été",
+        "hero.point1": "Des opérations qui tournent sans le propriétaire",
+        "hero.point2": "Des systèmes que les acheteurs respectent en due diligence",
+        "hero.point3": "Des vérités dures, une exécution claire en 90 jours",
+        "hero.portrait_sub": "Opérations prêtes pour la sortie · Entreprises de services",
+        "hero.strip_link": "JT Foxx · Tim Gannon · Joe Foster · plus",
         "hero.trust": "Geelong, Australie • Travail avec des dirigeants d'entreprises de services à travers l'Australie",
 
         "inroom.label": "DANS LA SALLE",
@@ -873,18 +898,22 @@ const translations = {
         "booking.subtitle": "30 minutes • Gratuit • Sans obligation",
         "service.learn_more": "En savoir plus",
         roomTitles: [
-            "Avec l'entrepreneur milliardaire John Catsimatis et son épouse à New York",
-            "Avec JT Foxx",
+            "Avec JT Foxx — entrepreneur mondial et leader de masterminds",
+            "Avec JT Foxx et l'entrepreneur milliardaire John Catsimatis à New York",
+            "Avec Tim Gannon et JT Foxx",
+            "Avec Reggie Batts — collaboration conseil et événements",
             "Avec Joe Foster, cofondateur de Reebok",
             "Aux côtés de Tom Brady à Melbourne",
-            "Avec Tim Gannon, cofondateur d'Outback Steakhouse, et JT Foxx"
+            "Avec Francie lors d'événements de haut niveau pour milliardaires, entrepreneurs et dirigeants"
         ],
         roomStories: [
-            `<p>John Catsimatis est un milliardaire autodidacte qui a construit et développé de multiples entreprises significatives dans divers secteurs, créant une richesse substantielle et une valeur à long terme grâce à une exécution disciplinée et une vision stratégique.</p><p>À ses côtés se trouve son épouse, qui a fait partie intégrante de ce parcours. Ensemble, ils représentent un puissant exemple de succès commercial durable au plus haut niveau.</p><p>Être dans cette salle a permis une proximité directe avec la mentalité et le parcours d'individus qui ont livré à plusieurs reprises des résultats exceptionnels au cours de décennies.</p>`,
-            `<p>JT Foxx a créé certains des plus grands événements entrepreneuriaux et plateformes de mastermind de haut niveau au monde, créant des environnements où des propriétaires d'entreprises sérieux se connectent, lèvent des capitaux et passent à sept et huit chiffres.</p><p>À travers ses plateformes, il a aidé des milliers d'entrepreneurs à construire des entreprises significatives et à créer de la richesse réelle grâce à des relations stratégiques et des cadres de croissance éprouvés.</p><p>La proximité avec ce niveau de réseau et d'exécution fournit un aperçu direct de ce qu'il faut pour opérer et se développer aux plus hauts niveaux de l'entrepreneuriat.</p>`,
-            `<p>Joe Foster a cofondé Reebok et l'a développée d'une petite entreprise britannique en l'une des principales marques sportives mondiales, en concurrence directe avec Nike et Adidas sur la scène internationale.</p><p>La marque a atteint des milliards de revenus, est devenue une icône culturelle et a été acquise dans une transaction de plusieurs milliards de dollars.</p><p>Être assis avec l'homme qui a aidé à construire ce niveau de succès commercial mondial offre une perspective rare sur ce qu'il faut pour créer des entreprises durables et à grande échelle.</p>`,
-            `<p>Tom Brady est le quarterback le plus décoré de l'histoire de la NFL, avec un record de 7 championnats du Super Bowl — le plus haut accomplissement dans les sports d'équipe américains.</p><p>Au-delà de l'athlétisme, il a bâti un empire de marque personnelle et d'affaires de plusieurs centaines de millions de dollars, incluant la plateforme de bien-être TB12 et des investissements stratégiques dans de grandes entreprises.</p><p>La proximité avec quelqu'un qui a constamment livré des résultats de classe mondiale sur deux décennies au niveau le plus élevé offre un aperçu puissant sur la performance soutenue de haut niveau et la construction de marques à grande échelle.</p>`,
-            `<p>Tim Gannon est le cofondateur d'Outback Steakhouse, l'une des chaînes de restaurants casual les plus emblématiques et réussies au monde. Il a aidé à développer le concept d'un seul restaurant en un empire mondial avec des centaines de sites, offrant une qualité constante et une puissante expérience de marque à grande échelle.</p><p>Son expertise approfondie dans les opérations de l'hospitalité, la culture d'équipe et les systèmes reproductibles a transformé une idée audacieuse en une histoire de succès multimilliardaire qui a influencé toute l'industrie des services.</p><p>Être dans la salle avec Tim Gannon aux côtés de JT Foxx a offert un accès direct à la mentalité et aux stratégies derrière la construction d'entreprises de services durables et évolutives qui livrent des résultats exceptionnels année après année.</p>`
+            `<p>JT Foxx est l'un des entrepreneurs mondiaux et leaders de masterminds les plus reconnus — il construit des plateformes où des propriétaires sérieux se connectent, lèvent des capitaux et passent à sept et huit chiffres.</p><p>Nous travaillons dans les mêmes salles de haut niveau et continuons de collaborer. Son positionnement, son réseau et son exécution fixent le standard de l'entrepreneuriat sérieux — et ce standard façonne la façon dont j'accompagne les propriétaires de services ambitieux.</p><p>D'autres collaborations sont à venir.</p>`,
+            `<p>John Catsimatis est un milliardaire autodidacte qui a construit et développé de multiples entreprises significatives, créant richesse et valeur à long terme par une exécution disciplinée et une vision stratégique.</p><p>À ses côtés, son épouse a fait partie intégrante de ce parcours. Ensemble, ils incarnent le succès durable au plus haut niveau — dans des salles où figurent aussi des leaders comme JT Foxx.</p><p>Être dans cette salle a donné une proximité directe avec la mentalité de ceux qui livrent des résultats exceptionnels sur des décennies.</p>`,
+            `<p>Tim Gannon est le cofondateur d'Outback Steakhouse, l'une des chaînes casual les plus iconiques au monde. Il a aidé à passer d'un restaurant à un empire mondial.</p><p>Être dans la salle avec Tim Gannon aux côtés de JT Foxx a offert un accès direct aux stratégies derrière des entreprises de services scalables et durables.</p>`,
+            `<p>Reggie Batts est un collaborateur de haut niveau avec qui je travaille en pair sur le conseil et les événements.</p><p>Je soutiens Reggie en conseil et sur les événements — et il a exprimé sa reconnaissance pour cette contribution. Nous opérons en égaux : créer des salles, de la valeur et des résultats concrets pour des acteurs sérieux.</p><p>Ce type de collaboration entre pairs est le standard que j'apporte à chaque engagement.</p>`,
+            `<p>Joe Foster a cofondé Reebok et l'a développée d'une petite entreprise britannique en l'une des principales marques sportives mondiales.</p><p>La marque a atteint des milliards de revenus et a été acquise dans une transaction multimilliardaire.</p><p>S'asseoir avec l'homme qui a aidé à construire ce succès commercial mondial offre une perspective rare sur les entreprises à grande échelle.</p>`,
+            `<p>Tom Brady est le quarterback le plus décoré de l'histoire de la NFL, avec 7 Super Bowls.</p><p>Au-delà du sport, il a bâti un empire de marque et d'affaires de plusieurs centaines de millions de dollars.</p><p>La proximité d'une performance de classe mondiale sur deux décennies offre un aperçu puissant de la haute performance durable.</p>`,
+            `<p>Francie est une connectrice et stratège clé qui organise des événements de haut calibre pour milliardaires, entrepreneurs et dirigeants ambitieux.</p><p>Nous collaborons sur plusieurs événements de lead generation, deal flow et marketing stratégique.</p><p>Ces environnements donnent une vision directe de la création de valeur réelle au plus haut niveau.</p>`
         ],
         readStory: "Lire l'histoire →",
         moreMoments: "D'autres moments de salles à haute autorité disponibles sur demande.",
@@ -1013,6 +1042,11 @@ const translations = {
         "hero.subtitle": "Pomáhám ambiciózním vlastníkům servisních podniků budovat operace, které se škálují, dosahují nejvyšší úrovně a jsou plně připravené k odchodu nebo významnému komerčnímu růstu — bez závislosti na vás.",
         "hero.cta_book": "Rezervovat strategický hovor",
         "hero.cta_rooms": "Podívejte se na místnosti, ve kterých jsem byl",
+        "hero.point1": "Operace, které běží bez majitele",
+        "hero.point2": "Systémy, kterým důvěřují kupující při due diligence",
+        "hero.point3": "Tvrdé pravdy, jasná 90denní realizace",
+        "hero.portrait_sub": "Operace připravené k odchodu · Servisní podniky",
+        "hero.strip_link": "JT Foxx · Tim Gannon · Joe Foster · více",
         "hero.trust": "Geelong, Austrálie • Spolupráce s lídry servisních podniků po celé Austrálii",
 
         "inroom.label": "V MÍSTNOSTI",
@@ -1163,6 +1197,11 @@ const translations = {
         "hero.subtitle": "Pomáhám ambiciózním vlastníkům servisních podniků budovat operace, které se škálují, dosahují nejvyšší úrovně a jsou plně připravené k odchodu nebo významnému růstu — bez závislosti na vás.",
         "hero.cta_book": "Rezervovat Strategický Hovor",
         "hero.cta_rooms": "Podívejte se na místnosti, ve kterých jsem byl",
+        "hero.point1": "Operace, které běží bez majitele",
+        "hero.point2": "Systémy, kterým důvěřují kupující při due diligence",
+        "hero.point3": "Tvrdé pravdy, jasná 90denní realizace",
+        "hero.portrait_sub": "Operace připravené k odchodu · Servisní podniky",
+        "hero.strip_link": "JT Foxx · Tim Gannon · Joe Foster · více",
         "hero.trust": "Geelong, Austrálie • Spolupráce s lídry servisních podniků po celé Austrálii",
         "inroom.label": "V MÍSTNOSTI",
         "inroom.title": "V místnosti s výjimečnými operátory",
@@ -1190,18 +1229,22 @@ const translations = {
         "service6.desc": "Kompletní audit operací připravených k odchodu + 90denní plán. Identifikujte a opravte skryté slabiny, které ničí 30–50 % hodnoty podniku při odchodu.",
         "service6.badge": "Vlajková",
         roomTitles: [
-            "S miliardářským podnikatelem Johnem Catsimatisem a jeho manželkou v New Yorku",
-            "S JT Foxxem",
+            "S JT Foxxem — globální podnikatel a leader mastermindů",
+            "S JT Foxxem a miliardářem Johnem Catsimatisem v New Yorku",
+            "S Timem Gannonem a JT Foxxem",
+            "S Reggie Battsem — spolupráce na konzultacích a eventech",
             "S Joe Fosterem, spoluzakladatelem Reeboku",
             "Po boku Toma Bradyho v Melbourne",
-            "S Timem Gannonem, spoluzakladatelem Outback Steakhouse, a JT Foxxem"
+            "S Francií na high-level eventech pro miliardáře, podnikatele a majitele firem"
         ],
         roomStories: [
-            `<p>John Catsimatis je samozřejmý miliardář, který vybudoval a rozšířil několik významných podniků v různých odvětvích a vytvořil podstatné bohatství a dlouhodobou hodnotu díky disciplinovanému provádění a strategické vizi.</p><p>Po jeho boku stojí jeho manželka, která byla nedílnou součástí této cesty. Společně představují silný příklad udržitelného obchodního úspěchu na nejvyšší úrovni.</p><p>Být v této místnosti poskytlo přímou blízkost k myšlení a stopě jednotlivců, kteří opakovaně přinášeli výjimečné výsledky zaměřené na výsledky po desetiletí.</p>`,
-            `<p>JT Foxx vybudoval některé z největších podnikatelských akcí a high-level mastermind platforem na světě, vytvářející prostředí, kde seriózní vlastníci podniků spojují, získávají kapitál a škálují na sedm a osm číslic.</p><p>Prostřednictvím svých platforem pomohl tisícům podnikatelů vybudovat významné společnosti a vytvořit skutečné bohatství prostřednictvím strategických vztahů a osvědčených rámců růstu.</p><p>Blízkost k této úrovni sítě a provádění poskytuje přímý vhled do toho, co je potřeba k provozu a škálování na nejvyšších úrovních podnikání.</p>`,
-            `<p>Joe Foster spoluzaložil Reebok a rozšířil ji z malé britské společnosti na jednu z předních globálních atletických značek na světě, přímo soutěžící s Nike a Adidas na mezinárodní scéně.</p><p>Značka dosáhla miliard v příjmech, stala se kulturní ikonou a byla nakonec získána v transakci v hodnotě několika miliard dolarů.</p><p>Sedět s mužem, který pomohl vybudovat takovou úroveň globálního komerčního úspěchu, poskytuje vzácnou perspektivu na to, co je potřeba k vytvoření trvalých, velkorozměrných podniků.</p>`,
-            `<p>Tom Brady je nejoceňovanějším quarterbackem v historii NFL, s rekordními 7 tituly Super Bowl — nejvyšším úspěchem v amerických týmových sportech.</p><p>Mimo atletiku vybudoval osobní značku a obchodní impérium v hodnotě stovek milionů dolarů, včetně platformy pro wellness TB12 a strategických investic do velkých společností.</p><p>Blízkost k někomu, kdo konzistentně přinášel výsledky světové třídy po dvě desetiletí na absolutně nejvyšší úrovni, nabízí silný vhled do udržitelného vysokého výkonu a budování značky ve velkém měřítku.</p>`,
-            `<p>Tim Gannon je spoluzakladatelem Outback Steakhouse, jedné z nejikoničtějších a nejúspěšnějších řetězců neformálních restaurací na světě. Pomohl rozšířit koncept z jediné restaurace na globální impérium se stovkami lokalit, poskytující konzistentní kvalitu a silnou značkovou zkušenost v masovém měřítku.</p><p>Jeho hluboká expertíza v pohostinských operacích, týmové kultuře a opakovatelných systémech proměnila odvážnou myšlenku v multimiliardový příběh úspěchu, který ovlivnil celý servisní průmysl.</p><p>Být v místnosti s Timem Gannonem po boku JT Foxxe nabídlo přímý přístup k myšlení a strategiím za budováním trvalých, škálovatelných servisních podniků, které rok co rok přinášejí výjimečné výsledky.</p>`
+            `<p>JT Foxx je jedním z nejuznávanějších globálních podnikatelů a leaderů mastermindů — buduje platformy, kde se seriózní majitelé firem propojují, získávají kapitál a škálují na sedm a osm číslic.</p><p>Pracujeme ve stejných high-level místnostech a pokračujeme ve spolupráci. Jeho pozice, síť a exekuce nastavují standard seriózního podnikání — a ten standard formuje, jak podporuji ambiciózní majitele servisních firem.</p><p>Další společná práce je před námi.</p>`,
+            `<p>John Catsimatis je self-made miliardář, který vybudoval a rozšířil několik významných podniků a vytváří dlouhodobou hodnotu disciplinovanou exekucí a strategickou vizí.</p><p>Po jeho boku je manželka, integrální součást této cesty. Společně představují udržitelný úspěch na nejvyšší úrovni — v místnostech, kde jsou i lídři jako JT Foxx.</p><p>Být v této místnosti dalo přímou blízkost k myšlení lidí, kteří desetiletí dodávají výjimečné výsledky.</p>`,
+            `<p>Tim Gannon je spoluzakladatelem Outback Steakhouse, jedné z nejikoničtějších casual dining sítí na světě. Pomohl rozšířit koncept z jedné restaurace na globální impérium.</p><p>Být v místnosti s Timem Gannonem po boku JT Foxxe nabídlo přímý přístup ke strategiím škálovatelných servisních podniků.</p>`,
+            `<p>Reggie Batts je high-level spolupracovník, se kterým pracuji jako peer na konzultacích a eventech.</p><p>Podporuji Reggieho konzultacemi a eventovou prací — a on za to otevřeně vyjádřil vděčnost. Fungujeme jako rovní: tvoříme místnosti, hodnotu a reálné výsledky pro seriózní lidi v byznysu.</p><p>Tento typ peer spolupráce je standard, který přináším do každé spolupráce.</p>`,
+            `<p>Joe Foster spoluzaložil Reebok a rozšířil ji z malé britské firmy na jednu z předních globálních atletických značek.</p><p>Značka dosáhla miliard v příjmech a byla získána v multi-miliardové transakci.</p><p>Sedět s mužem, který pomohl vybudovat takový globální komerční úspěch, dává vzácnou perspektivu na velké byznysy.</p>`,
+            `<p>Tom Brady je nejoceňovanější quarterback v historii NFL se 7 Super Bowly.</p><p>Mimo sport vybudoval brand a byznys impérium v hodnotě stovek milionů dolarů.</p><p>Blízkost k někomu, kdo dvě desetiletí dodává výsledky světové třídy, dává silný vhled do udržitelného high performance.</p>`,
+            `<p>Francie je klíčová connectorka a stratégyně, která vytváří high-caliber eventy pro miliardáře, podnikatele a ambiciózní majitele.</p><p>Spolupracujeme na více eventech zaměřených na lead generation, deal flow a strategický marketing.</p><p>Tato prostředí dávají přímý vhled do toho, jak tvořit reálnou hodnotu na nejvyšších úrovních byznysu.</p>`
         ],
         readStory: "Přečíst příběh →",
         moreMoments: "Další momenty z místností s vysokou autoritou k dispozici na vyžádání.",
@@ -1238,11 +1281,12 @@ function switchLanguage(lang) {
     const readText = (translations[lang] && translations[lang].readStory) || 'Read story →';
     const moreTextContent = (translations[lang] && translations[lang].moreMoments) || 'More moments from high-authority rooms available upon request.';
 
+    // Only update explicit title nodes so order/images never desync from wrong p tags
     const cards = document.querySelectorAll('#in-the-room .group');
     cards.forEach((card, i) => {
-        const p = card.querySelector('.p-5 p');
+        const p = card.querySelector('.room-card-title');
         if (p && titles[i]) p.textContent = titles[i];
-        const span = card.querySelector('.p-5 span');
+        const span = card.querySelector('.room-card-read');
         if (span) span.textContent = readText;
     });
 
@@ -1332,12 +1376,11 @@ const roomStories = [
     },
     {
         title: "With Reggie Batts — collaborating on consultancy & events",
-        image: "assets/reggie-batts.jpg",
+        image: "assets/reggie-batts-v2.jpg",
         story: `
             <p>Reggie Batts is a high-level collaborator I work with as a peer on consultancy and events.</p>
             <p>I support Reggie with consultancy and event work — and he has been openly grateful for that contribution. We operate as equals: building rooms, creating value, and delivering real outcomes for serious people in business.</p>
             <p>That kind of peer collaboration is the standard I bring to every engagement.</p>
-            <p><a href="https://www.instagram.com/reggiebatts/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-teal-700 font-semibold hover:text-teal-900">Reggie Batts on Instagram →</a></p>
         `
     },
     {
@@ -1360,7 +1403,7 @@ const roomStories = [
     },
     {
         title: "With Francie at high-level events coordinating billionaires, entrepreneurs & business owners",
-        image: "assets/francie-events.jpg",
+        image: "assets/francie-events-v2.jpg",
         story: `
             <p>Francie is a key connector and strategist who curates high-caliber events bringing together billionaires, entrepreneurs, and ambitious business owners.</p>
             <p>We collaborate on multiple events focused on lead generation, deal flow, and strategic marketing. My role involves coordinating the right rooms and ensuring participants walk away with meaningful opportunities and relationships.</p>

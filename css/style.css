@@ -21,9 +21,87 @@ nav {
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Card hover lift is already in HTML inline, but we can enhance */
+/* Services — premium dark editorial cards */
 .service-card {
   will-change: transform;
+  backdrop-filter: blur(8px);
+}
+
+#services .service-card:hover {
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.12), 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* In the Room — fixed 4:5 frames; ignore EXIF re-orient (laptop/desktop) */
+#in-the-room .aspect-\[4\/5\] img {
+  object-fit: cover;
+  image-orientation: none;
+}
+
+#room-story-image {
+  object-fit: contain;
+  object-position: center;
+  image-orientation: none;
+}
+
+/* Hero + About portrait — same crop language */
+header img[src*="profile-sarka"],
+#about img[src*="profile-sarka"] {
+  object-fit: cover;
+  image-orientation: none;
+}
+
+/* Testimonial proof thumbs — square crop, no EXIF flip */
+.testimonial img {
+  object-fit: cover;
+  object-position: center;
+  image-orientation: none;
+  aspect-ratio: 1 / 1;
+}
+
+/* Mobile: In the Room grid — tighter gap, full-width cards */
+@media (max-width: 767px) {
+  #in-the-room .grid {
+    gap: 1rem;
+  }
+  #in-the-room .group .p-5 {
+    padding: 1rem 1.1rem 1.15rem;
+  }
+  #in-the-room .room-card-title {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+  }
+}
+
+/* Laptop: even card heights — title block min height */
+@media (min-width: 768px) {
+  #in-the-room .group {
+    display: flex;
+    flex-direction: column;
+  }
+  #in-the-room .group > .p-5 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Modals — ensure scroll works on laptop (flex + min-h-0) */
+#room-story-modal .modal,
+#service-modal .modal,
+#booking-modal .modal {
+  max-height: 90vh;
+}
+
+#room-story-modal .modal > .flex-1,
+#service-modal .modal > .flex-1,
+#booking-modal .modal > .flex-1 {
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Premium section rhythm */
+section h2 {
+  letter-spacing: -0.02em;
 }
 
 /* Modal backdrop click hint */
