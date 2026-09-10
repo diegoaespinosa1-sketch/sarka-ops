@@ -268,14 +268,9 @@ function closeServiceModal() {
     document.body.style.overflow = '';
 }
 
-// Booking modal
+// Booking → Stripe Checkout page ($297 strategy consult)
 function openBookingModal() {
-    const modal = document.getElementById('booking-modal');
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-
-    enableSwipeToClose(modal, closeBookingModal);
+    window.location.href = '/book/';
 }
 
 function closeBookingModal() {

@@ -1,0 +1,8 @@
+{
+  "name": "sarka-ops",
+  "private": true,
+  "description": "Sarka Espinosa Consulting — static site + Netlify Functions for Stripe Checkout",
+  "dependencies": {
+    "stripe": "^17.7.0"
+  }
+}

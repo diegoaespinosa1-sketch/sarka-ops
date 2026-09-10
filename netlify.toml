@@ -1,12 +1,22 @@
 [build]
   publish = "."
+  functions = "netlify/functions"
+  command = "npm install"
 
 [build.environment]
   NODE_VERSION = "18"
 
-# No catch-all redirect needed for this multi-page static site.
-# Add specific redirects here only if required later.
+[[redirects]]
+  from = "/api/create-checkout-session"
+  to = "/.netlify/functions/create-checkout-session"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/stripe-config"
+  to = "/.netlify/functions/stripe-config"
+  status = 200
+  force = true
 
 [forms]
-  # Formspree is handling the main contact form
-  # This is just for any native Netlify forms if added later
+  # Formspree handles the main contact form

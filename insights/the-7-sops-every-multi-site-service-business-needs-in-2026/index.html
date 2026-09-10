@@ -440,10 +440,7 @@
         });
         
         function openBookingModalFromArticle() {
-            const modal = document.getElementById('booking-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
+            window.location.href = '/book/';
         }
         
         function closeBookingModalFromArticle() {
