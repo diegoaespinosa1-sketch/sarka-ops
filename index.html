@@ -212,7 +212,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
-                        <span data-i18n="nav.book_call">Book Strategy Call</span>
+                        <span data-i18n="nav.book_call">Book Consult — $297</span>
                     </button>
                 </div>
 
@@ -248,7 +248,7 @@
                 <div class="pt-3 border-t flex flex-col gap-y-3">
                     <a href="#contact" class="py-2 text-center text-slate-700 font-semibold border border-slate-200 rounded-2xl">Get in touch</a>
                     <button onclick="openBookingModal(); document.getElementById('mobile-menu').classList.add('hidden')"
-                            class="py-3 bg-amber-400 text-slate-950 font-semibold rounded-2xl">Book a Strategy Call</button>
+                            class="py-3 bg-amber-400 text-slate-950 font-semibold rounded-2xl">Book Consult — $297</button>
                 </div>
             </div>
         </div>
@@ -278,7 +278,7 @@
                     <div class="mt-9 flex flex-wrap items-center gap-3">
                         <button onclick="openBookingModal()"
                                 class="inline-flex items-center justify-center gap-x-2 bg-amber-400 hover:bg-amber-300 active:bg-white transition-all text-slate-950 px-7 h-12 rounded-2xl text-sm font-semibold">
-                            <span data-i18n="hero.cta_book">Book a Strategy Call</span>
+                            <span data-i18n="hero.cta_book">Book a Strategy Consult — $297</span>
                             <span aria-hidden="true">→</span>
                         </button>
 
@@ -444,7 +444,7 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES — three offers only -->
     <section id="services" class="relative bg-slate-950 text-white pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(15,118,110,0.18),_transparent_55%)] pointer-events-none"></div>
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(180,83,9,0.12),_transparent_50%)] pointer-events-none"></div>
@@ -453,22 +453,22 @@
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-12 md:mb-14">
                 <div class="max-w-xl">
                     <div class="uppercase tracking-[2.5px] text-[11px] font-semibold text-teal-400 mb-3" data-i18n="services.label">HOW I HELP</div>
-                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-[1.1]" data-i18n="services.title">Strategic support for ambitious service businesses</h2>
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-[1.1]" data-i18n="services.title">Three engagements. One outcome: a business that runs without you.</h2>
                 </div>
-                <p class="max-w-md text-slate-400 text-[15px] md:text-base leading-relaxed" data-i18n="services.desc">The no-nonsense support for leaders ready to face the hard truths and build organisations that actually scale and perform.</p>
+                <p class="max-w-md text-slate-400 text-[15px] md:text-base leading-relaxed" data-i18n="services.desc">No capability menu. Clear next steps for owners who want exit-ready operations and commercial performance — not another workshop catalogue.</p>
             </div>
 
-            <!-- Flagship first — premium full-width -->
-            <div onclick="showServiceModal(5)" class="service-card group cursor-pointer relative mb-5 md:mb-6 rounded-[1.75rem] border border-amber-500/40 bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 hover:border-amber-400/70 active:scale-[0.995] transition-all duration-200 overflow-hidden touch-manipulation">
+            <!-- Offer 1 — Flagship -->
+            <div onclick="showServiceModal(0)" class="service-card group cursor-pointer relative mb-4 md:mb-5 rounded-[1.75rem] border border-amber-500/40 bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 hover:border-amber-400/70 active:scale-[0.995] transition-all duration-200 overflow-hidden touch-manipulation">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
                 <div class="relative p-7 md:p-10 md:flex md:items-center md:gap-x-12">
                     <div class="md:flex-1">
                         <div class="flex flex-wrap items-center gap-3 mb-4">
-                            <span class="px-3 py-1 text-[10px] font-bold tracking-[1.5px] uppercase bg-amber-400 text-amber-950 rounded-full" data-i18n="service6.badge">Flagship</span>
-                            <span class="text-[11px] tracking-widest uppercase text-amber-200/80">Primary engagement</span>
+                            <span class="px-3 py-1 text-[10px] font-bold tracking-[1.5px] uppercase bg-amber-400 text-amber-950 rounded-full" data-i18n="service1.badge">Flagship</span>
+                            <span class="text-[11px] tracking-widest uppercase text-amber-200/80" data-i18n="service1.meta">Engagement · Audit + 90-day plan</span>
                         </div>
-                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white mb-3" data-i18n="service6.title">Operations Built to Sell</h3>
-                        <p class="text-slate-300 text-[15px] md:text-lg leading-relaxed max-w-2xl" data-i18n="service6.desc">Full audit + 90-day execution plan to build a business that runs and sells without you. Fix the hidden operational problems that destroy value at exit.</p>
+                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white mb-3" data-i18n="service1.title">Exit-Ready Audit + 90-Day Plan</h3>
+                        <p class="text-slate-300 text-[15px] md:text-lg leading-relaxed max-w-2xl" data-i18n="service1.desc">Find the operational gaps that destroy exit value. Walk away with a prioritised 90-day plan so the business can run — and sell — without you.</p>
                         <div class="mt-6 inline-flex items-center text-sm font-semibold text-amber-300 group-hover:text-amber-200">
                             <span data-i18n="service.learn_more">Learn more</span>
                             <span class="ml-2 transition-transform group-hover:translate-x-1">→</span>
@@ -482,115 +482,46 @@
                 </div>
             </div>
 
-            <!-- Supporting services — editorial numbered list -->
+            <!-- Offers 2 + 3 -->
             <div class="grid md:grid-cols-2 gap-3 md:gap-4">
-                <div onclick="showServiceModal(0)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-7 transition-all duration-200 touch-manipulation">
-                    <div class="flex items-start gap-x-4">
-                        <span class="text-teal-500/80 font-mono text-xs tracking-widest pt-1">01</span>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="font-semibold text-lg md:text-xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service1.title">Customer Experience Strategy</h3>
-                            <p class="mt-2 text-slate-400 text-sm leading-relaxed" data-i18n="service1.desc">Build CX systems that increase customer retention, reduce churn, and directly strengthen business valuation for exit or growth.</p>
-                            <div class="mt-4 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
-                                <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
-                            </div>
-                        </div>
+                <div onclick="showServiceModal(1)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-8 transition-all duration-200 touch-manipulation">
+                    <div class="text-[11px] tracking-widest uppercase text-teal-400/90 mb-3" data-i18n="service2.meta">Engagement · Implementation</div>
+                    <h3 class="font-semibold text-xl md:text-2xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service2.title">Operations Build</h3>
+                    <p class="mt-3 text-slate-400 text-sm md:text-[15px] leading-relaxed" data-i18n="service2.desc">Execute the plan: SOPs, CX systems, CRM/sales operating rhythm, and leadership enablement — scoped so the business runs without the owner.</p>
+                    <div class="mt-5 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
+                        <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
                     </div>
                 </div>
 
-                <div onclick="showServiceModal(1)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-7 transition-all duration-200 touch-manipulation">
-                    <div class="flex items-start gap-x-4">
-                        <span class="text-teal-500/80 font-mono text-xs tracking-widest pt-1">02</span>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="font-semibold text-lg md:text-xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service2.title">SOP Development &amp; Process Design</h3>
-                            <p class="mt-2 text-slate-400 text-sm leading-relaxed" data-i18n="service2.desc">Turn tribal knowledge into clear, documented, scalable systems that make your business less owner-dependent and buyer-ready.</p>
-                            <div class="mt-4 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
-                                <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="showServiceModal(2)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-7 transition-all duration-200 touch-manipulation">
-                    <div class="flex items-start gap-x-4">
-                        <span class="text-teal-500/80 font-mono text-xs tracking-widest pt-1">03</span>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="font-semibold text-lg md:text-xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service3.title">Sales Systems &amp; CRM Implementation</h3>
-                            <p class="mt-2 text-slate-400 text-sm leading-relaxed" data-i18n="service3.desc">Implement proven revenue operating systems (Zoho CRM &amp; Salesforce) that deliver predictable growth and clean, due-diligence-ready financials.</p>
-                            <div class="mt-4 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
-                                <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="showServiceModal(3)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-7 transition-all duration-200 touch-manipulation">
-                    <div class="flex items-start gap-x-4">
-                        <span class="text-teal-500/80 font-mono text-xs tracking-widest pt-1">04</span>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="font-semibold text-lg md:text-xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service4.title">Leadership &amp; Team Development</h3>
-                            <p class="mt-2 text-slate-400 text-sm leading-relaxed" data-i18n="service4.desc">Develop your managers and frontline teams so the business can perform at a high level even without your daily involvement — essential for any exit.</p>
-                            <div class="mt-4 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
-                                <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div onclick="showServiceModal(4)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-7 transition-all duration-200 touch-manipulation md:col-span-2">
-                    <div class="flex items-start gap-x-4">
-                        <span class="text-teal-500/80 font-mono text-xs tracking-widest pt-1">05</span>
-                        <div class="flex-1 min-w-0 md:max-w-2xl">
-                            <h3 class="font-semibold text-lg md:text-xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service5.title">Fractional CX &amp; Operations Leadership</h3>
-                            <p class="mt-2 text-slate-400 text-sm leading-relaxed" data-i18n="service5.desc">Embedded senior-level support to drive performance today while building operations that can run and sell without you.</p>
-                            <div class="mt-4 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
-                                <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
-                            </div>
-                        </div>
+                <div onclick="showServiceModal(2)" class="service-card group cursor-pointer rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-teal-400/30 active:scale-[0.99] p-6 md:p-8 transition-all duration-200 touch-manipulation">
+                    <div class="text-[11px] tracking-widest uppercase text-teal-400/90 mb-3" data-i18n="service3.meta">Monthly retainer</div>
+                    <h3 class="font-semibold text-xl md:text-2xl tracking-tight text-white group-hover:text-teal-200 transition-colors" data-i18n="service3.title">Fractional CX &amp; Operations Leadership</h3>
+                    <p class="mt-3 text-slate-400 text-sm md:text-[15px] leading-relaxed" data-i18n="service3.desc">Embedded senior support to drive performance now and keep building independence — until the systems hold without you.</p>
+                    <div class="mt-5 text-teal-400 text-sm font-medium inline-flex items-center opacity-80 group-hover:opacity-100">
+                        <span data-i18n="service.learn_more">Learn more</span><span class="ml-1.5 group-hover:ml-2 transition-all">→</span>
                     </div>
                 </div>
             </div>
+
+            <p class="mt-8 text-center text-[13px] text-slate-500" data-i18n="services.entry">
+                Entry point: paid strategy consult — $297 AUD (credited if we proceed).
+            </p>
         </div>
     </section>
 
-    <!-- EXIT-READY FLAGSHIP -->
-    <section id="exit-ready" class="relative bg-slate-950 text-white py-16 md:py-24 overflow-hidden border-y border-slate-800">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(245,158,11,0.12),_transparent_55%)] pointer-events-none"></div>
+    <!-- EXIT-READY — short bridge (detail lives on program page) -->
+    <section id="exit-ready" class="relative bg-slate-950 text-white py-14 md:py-16 overflow-hidden border-y border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(245,158,11,0.10),_transparent_55%)] pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-5 md:px-6">
-            <div class="max-w-3xl">
-                <div class="uppercase tracking-[2.5px] text-[11px] font-semibold text-amber-400 mb-3" data-i18n="exitready.label">FLAGSHIP OFFERING</div>
-                
-                <h2 class="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1]" data-i18n="exitready.title">Audit + 90-Day Plan to Make Your Business Independent</h2>
-                
-                <p class="mt-3 font-medium text-amber-200/90" data-i18n="exitready.flagship">My flagship offering.</p>
-                
-                <p class="mt-5 text-[16px] leading-relaxed text-slate-300" data-i18n="exitready.desc">I help owners close the gap between daily operations and a business that is actually transferable and valuable.</p>
-                
-                <ul class="mt-8 space-y-4 text-[15px] text-slate-200">
-                    <li class="flex gap-3">
-                        <span class="text-amber-400 mt-0.5">→</span> 
-                        <span data-i18n="exitready.benefit1">Eliminate the issues that destroy 30–50% of exit value</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="text-amber-400 mt-0.5">→</span> 
-                        <span data-i18n="exitready.benefit2">Build systems that let the business run and sell without you</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="text-amber-400 mt-0.5">→</span> 
-                        <span data-i18n="exitready.benefit3">Get a clear 90-day plan that materially improves buyer confidence and valuation</span>
-                    </li>
-                </ul>
-
-                <div class="mt-8 rounded-2xl border border-amber-400/30 bg-amber-500/10 px-5 py-4">
-                    <div class="text-xs font-semibold uppercase tracking-[1.5px] text-amber-300" data-i18n="guarantee.label">GUARANTEE</div>
-                    <p class="mt-1.5 text-[15px] font-semibold text-white" data-i18n="guarantee.short_title">100% Money-Back Guarantee</p>
-                    <p class="mt-1.5 text-sm text-slate-300 leading-relaxed" data-i18n="guarantee.short">
-                        If I don’t deliver the agreed work — and you do your part — you get a full refund. Full terms on the program page.
-                    </p>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                <div class="max-w-2xl">
+                    <div class="uppercase tracking-[2.5px] text-[11px] font-semibold text-amber-400 mb-3" data-i18n="exitready.label">FLAGSHIP PROGRAM</div>
+                    <h2 class="text-2xl md:text-4xl font-semibold tracking-tight leading-[1.15]" data-i18n="exitready.title">Exit-Ready Operations — full program detail</h2>
+                    <p class="mt-3 text-slate-300 text-[15px] leading-relaxed" data-i18n="exitready.desc">Guarantee, pillars, and how the Audit + 90-Day Plan works. For owners serious about transferability and value.</p>
                 </div>
-
-                <a href="/exit-ready-operations/" 
-                   class="mt-8 inline-flex items-center justify-center gap-x-2 px-7 py-3.5 bg-amber-400 hover:bg-amber-300 active:bg-white transition text-slate-950 text-sm font-semibold rounded-2xl">
-                    <span data-i18n="exitready.cta">Learn more about the Program</span> <span class="ml-1">→</span>
+                <a href="/exit-ready-operations/"
+                   class="inline-flex items-center justify-center gap-x-2 px-7 py-3.5 bg-amber-400 hover:bg-amber-300 active:bg-white transition text-slate-950 text-sm font-semibold rounded-2xl shrink-0">
+                    <span data-i18n="exitready.cta">View the program</span> <span aria-hidden="true">→</span>
                 </a>
             </div>
         </div>
@@ -705,8 +636,8 @@
             <div class="mt-12 grid md:grid-cols-4 gap-6">
                 <div class="process-step bg-slate-800/70 border border-slate-700 rounded-3xl p-8">
                     <div class="text-teal-400 font-mono text-sm font-semibold tracking-widest">01</div>
-                    <div class="mt-4 font-semibold text-xl text-white" data-i18n="engagements.step1_title">Discovery Call</div>
-                    <p class="mt-3 text-sm text-slate-300" data-i18n="engagements.step1_desc">Free 30-minute conversation to understand your biggest challenges, goals, and constraints. No pitch — just clarity.</p>
+                    <div class="mt-4 font-semibold text-xl text-white" data-i18n="engagements.step1_title">Strategy Consult</div>
+                    <p class="mt-3 text-sm text-slate-300" data-i18n="engagements.step1_desc">Paid 30-minute consult ($297 AUD, credited if we proceed) to understand your challenges, goals, and constraints — and whether we are a fit.</p>
                 </div>
                 <div class="process-step bg-slate-800/70 border border-slate-700 rounded-3xl p-8">
                     <div class="text-teal-400 font-mono text-sm font-semibold tracking-widest">02</div>
@@ -798,11 +729,11 @@
 
             <button onclick="openBookingModal()" 
                     class="mt-8 inline-flex items-center justify-center bg-amber-400 hover:bg-amber-300 active:bg-white text-black font-semibold px-10 py-4 rounded-2xl text-lg transition">
-                <span data-i18n="cta.final.book">Book Your Strategy Call</span> <span class="ml-2">→</span>
+                <span data-i18n="cta.final.book">Book Strategy Consult — $297</span> <span class="ml-2">→</span>
             </button>
 
             <p class="mt-6 text-sm text-teal-200 opacity-75" data-i18n="cta.final.note">
-                Limited slots available. Serious inquiries only.
+                Limited slots. $297 AUD — credited if we proceed. Serious inquiries only.
             </p>
         </div>
     </section>
@@ -843,7 +774,7 @@
                     </div>
 
                     <div class="mt-9 pt-8 border-t text-xs text-slate-500">
-                        Prefer a quick chat? Use the booking button to grab a time that suits you.
+                        Prefer a structured next step? Book a paid strategy consult ($297 AUD — credited if we proceed).
                     </div>
                 </div>
             </div>
@@ -932,8 +863,8 @@
             <div class="px-6 pt-3 md:pt-7 pb-5 bg-slate-50 border-b shrink-0">
                 <div class="flex justify-between items-start">
                     <div>
-                        <div class="font-semibold text-2xl tracking-tight" data-i18n="booking.title">Book a Strategy Call</div>
-                        <div class="text-sm text-slate-600 mt-1" data-i18n="booking.subtitle">30 minutes • Free • No obligation</div>
+                        <div class="font-semibold text-2xl tracking-tight" data-i18n="booking.title">Book a Strategy Consult</div>
+                        <div class="text-sm text-slate-600 mt-1" data-i18n="booking.subtitle">30 minutes · $297 AUD · Credited if we proceed</div>
                     </div>
                     <button onclick="closeBookingModal()" 
                             class="w-9 h-9 flex items-center justify-center text-3xl text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full -mr-1 -mt-1">×</button>
@@ -941,33 +872,13 @@
             </div>
             
             <div class="flex-1 min-h-0 overflow-y-auto overscroll-contain p-6 md:p-7">
-                <div class="text-sm mb-4 text-slate-600">Choose a time that works for you. I’ll send a calendar invite immediately.</div>
-                
-                <!-- 
-                    TODO: Paste your Calendly embed code here when ready.
-                    Example:
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                -->
-                
-                <!-- Calendly embed - replace the data-url with your real Calendly link -->
+                <p class="text-sm mb-4 text-slate-600" data-i18n="booking.note">Serious inquiries only. The consult fee is credited in full toward your engagement if we move forward.</p>
+
+                <!-- Calendly: connect Stripe and enable payment on this event ($297 AUD) -->
                 <div class="calendly-inline-widget" data-url="https://calendly.com/sarka-sarka-ops/30min" style="min-width:320px;height:630px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-                <!-- Fallback if embed not ready -->
-                <!-- 
-                <div class="rounded-2xl border border-slate-200 p-6 md:p-8 text-center bg-slate-50">
-                    <div class="font-medium mb-2">Scheduling coming soon</div>
-                    <p class="text-sm text-slate-500 mb-6">In the meantime, email me directly and I’ll send you available times.</p>
-                    
-                    <button onclick="openContactEmail('Strategy Call Request')"
-                            class="inline-block text-sm font-semibold bg-white border px-6 py-2.5 rounded-2xl hover:bg-slate-100 active:bg-slate-200">
-                        Email Sarka directly
-                    </button>
-                </div>
-                -->
-
-                <div class="text-[10px] text-center mt-5 text-slate-400">I typically respond within a few hours during business days.</div>
+                <div class="text-[10px] text-center mt-5 text-slate-400">Enable Calendly payments for this event so the $297 fee is collected at booking.</div>
             </div>
             
             <!-- Mobile close affordance -->
@@ -1013,9 +924,9 @@
             <!-- Bottom Action Bar -->
             <div class="bg-slate-50 px-6 py-4 border-t flex items-center justify-between shrink-0 z-10">
                 <button onclick="closeServiceModal(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
-                        class="text-sm font-semibold text-slate-600 hover:text-slate-900 active:text-teal-700 py-1" data-i18n="modal.discuss">Discuss this service →</button>
+                        class="text-sm font-semibold text-slate-600 hover:text-slate-900 active:text-teal-700 py-1" data-i18n="modal.discuss">Discuss this engagement →</button>
                 <button onclick="closeServiceModal(); openBookingModal()" 
-                        class="px-5 py-2.5 bg-teal-800 hover:bg-teal-900 text-white text-sm font-semibold rounded-2xl" data-i18n="modal.book_call">Book a call</button>
+                        class="px-5 py-2.5 bg-teal-800 hover:bg-teal-900 text-white text-sm font-semibold rounded-2xl" data-i18n="modal.book_call">Book consult — $297</button>
             </div>
         </div>
     </div>
