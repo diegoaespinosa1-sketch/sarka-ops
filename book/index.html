@@ -49,7 +49,12 @@
     const publishableKey = config.publishableKey;
 
     if (!config.configured || !publishableKey) {
-      statusEl.textContent = 'Checkout is not configured yet. Add STRIPE_PUBLISHABLE_KEY in Netlify (see STRIPE_INTEGRATION_TODO.md).';
+      statusEl.innerHTML = '';
+      document.getElementById('checkout-form').innerHTML =
+        '<div class="rounded-xl border border-amber-200 bg-amber-50 px-5 py-6 text-slate-800">' +
+        '<p class="font-semibold text-slate-900">Payments are being activated</p>' +
+        '<p class="mt-2 text-sm text-slate-600 leading-relaxed">Stripe checkout for the $297 strategy consult is almost ready. In the meantime, email <a class="text-teal-700 font-semibold underline" href="mailto:sarka@sarka-ops.com?subject=Strategy%20Consult%20%24297">sarka@sarka-ops.com</a> with “Strategy Consult” in the subject and we will confirm next steps.</p>' +
+        '</div>';
       return;
     }
 
