@@ -166,7 +166,7 @@ function initTestimonials() {
             </div>
             <div class="mt-8 pt-5 border-t border-slate-200 flex items-center gap-x-3">
                 ${t.photo 
-                    ? `<img src="${t.photo}" alt="${t.name}" class="w-14 h-14 rounded-xl object-cover object-center flex-shrink-0 ring-1 ring-slate-200" width="56" height="56">` 
+                    ? `<img src="${t.photo}" alt="${t.name}" class="w-16 h-16 md:w-20 md:h-20 rounded-xl object-cover object-center flex-shrink-0 ring-1 ring-slate-200" width="80" height="80">` 
                     : `<div class="w-11 h-11 rounded-full bg-slate-900 text-white flex-shrink-0 flex items-center justify-center text-xs font-bold tracking-wide">${t.name.split(' ').map(n => n[0]).join('')}</div>`
                 }
                 <div>
@@ -402,6 +402,7 @@ const translations = {
         // Navigation and UI
         "nav.services": "Services",
         "nav.results": "Results",
+        "nav.feedback": "Feedback",
         "nav.in_the_room": "In the Room",
         "nav.about": "About",
         "nav.how_i_work": "How I Work",
@@ -426,7 +427,7 @@ const translations = {
         "hero.proof3_label": "In diligence",
         "hero.proof3": "Clearer systems and evidence buyers can trust",
         "hero.portrait_sub": "Exit-ready operations · Service businesses",
-        "hero.strip_link": "JT Foxx · Tim Gannon · Joe Foster · more",
+        "hero.strip_link": "Surf Hotel · Huhtamaki · SABCO · more",
         "hero.trust": "Geelong, Australia • Working with service business leaders across Australia",
 
         // In the Room
@@ -559,6 +560,7 @@ const translations = {
         "engagements.step4_desc": "90-day review, KPI dashboards, and a handover package so your team owns the improvements long-term. Optional monthly retainer available.",
         "feedback.label": "REAL FEEDBACK",
         "feedback.title": "What leaders say about working together",
+        "feedback.desc": "Direct quotes from owners and operators after completing the work — not celebrity rooms.",
         "insights.label": "THOUGHT LEADERSHIP",
         "insights.title": "Latest insights",
         "insights.see_all": "See all insights →",

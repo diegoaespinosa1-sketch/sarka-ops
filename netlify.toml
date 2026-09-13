@@ -5,6 +5,8 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  # This site is static HTML + Functions — not Next.js. Skip Essential Next.js if enabled in UI.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[redirects]]
   from = "/api/create-checkout-session"
