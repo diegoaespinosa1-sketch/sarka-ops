@@ -2,6 +2,12 @@
 
 Single source of truth for finishing the **$297 AUD Strategy Consult** checkout (embedded Checkout Form on `/book/`).
 
+## Security
+
+- **Never** put `sk_live_…` / `sk_test_…` in chat, git, or HTML.
+- If a secret key was exposed: Stripe Dashboard → API keys → **Roll** it, then set the **new** key only in Netlify env vars.
+- Secret key goes in Netlify as `STRIPE_SECRET_KEY` only (not in this repo).
+
 ## Values to Replace
 
 The following values are placeholders and must be updated before going live.
