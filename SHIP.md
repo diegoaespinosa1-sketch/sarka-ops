@@ -4,7 +4,7 @@
 **GitHub remote name (not a local folder):** `diegoaespinosa1-sketch/sarka-ops`  
 **HQ folder (do not touch this packet):** `/Users/diegoespinosa/sarka-ops`
 
-Checked 2026-09-18: live https://sarka-ops.com still shows six services. `/book/` and `/resources/7-exit-killers/` 404. GitHub already has the three-engagement homepage.
+Verified live 2026-09-18 after GitHub link + clear-cache deploy. SHA `7f530aa`. Folders not renamed.
 
 ---
 
@@ -12,20 +12,19 @@ Checked 2026-09-18: live https://sarka-ops.com still shows six services. `/book/
 
 | Layer | State |
 |-------|--------|
-| Local files | Three engagements in `index.html` |
-| Folders | Unchanged. No rename / merge / delete. |
-| GitHub `origin/main` | Was `012436a`. New local commit waits for your **push yes**. |
-| Live sarka-ops.com | **Old.** Next.js runtime/plugin still blocking publish. |
+| Local / GitHub | `7f530aa` — static HTML, not Next.js |
+| Folders | Unchanged |
+| https://sarka-ops.com/ | **Live.** “Three engagements.” Not the old six-service page |
+| https://sarka-ops.com/book/ | **Live.** “Book a Strategy Consult” — checkout not proven (Stripe env) |
+| https://sarka-ops.com/resources/7-exit-killers/ | **Live.** “7 operational issues…” checklist |
 
 Do **not** zip-upload the home folder.
 
 ---
 
-## 1. Local (this session)
+## 1. Local + GitHub (done)
 
-`netlify.toml` no longer runs `npm install`. Build command is `true` (no-op) so a UI Next.js command cannot win. Plugin skip env vars kept.
-
-**Waiting on you:** yes to **git push** of this commit only. Agent will not push without that.
+`netlify.toml` build command is `true`. Pushed `7f530aa`. Netlify linked to `diegoaespinosa1-sketch/sarka-ops`.
 
 ---
 
