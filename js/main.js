@@ -574,7 +574,7 @@ const translations = {
             "With Reggie Batts — collaborating on consultancy & events",
             "With Joe Foster, Co-Founder of Reebok",
             "Alongside Tom Brady in Melbourne",
-            "With Francie at high-level events coordinating billionaires, entrepreneurs & business owners"
+            "With Francie, CEO of JT Foxx companies and brands"
         ],
         roomStories: [
             `<p>JT Foxx is one of the most recognised global entrepreneurs and mastermind leaders of our time — building platforms that connect serious business owners, raise capital, and scale companies to seven and eight figures.</p><p>We work in the same high-level rooms and continue to collaborate. His positioning, network, and execution set a standard for what serious entrepreneurship looks like — and that standard directly shapes how I support ambitious service business owners.</p><p>More joint work is ahead.</p>`,
@@ -583,7 +583,7 @@ const translations = {
             `<p>Reggie Batts is a high-level collaborator I work with as a peer on consultancy and events.</p><p>I support Reggie with consultancy and event work — and he has been openly grateful for that contribution. We operate as equals: building rooms, creating value, and delivering real outcomes for serious people in business.</p><p>That kind of peer collaboration is the standard I bring to every engagement.</p>`,
             `<p>Joe Foster co-founded Reebok and scaled it from a small British company into one of the world’s leading global athletic brands, competing directly with Nike and Adidas on an international stage.</p><p>The brand reached billions in revenue, became a cultural icon, and was eventually acquired in a multi-billion-dollar transaction.</p><p>Sitting with the man who helped build that level of global commercial success provides rare perspective on what it takes to create enduring, large-scale businesses.</p>`,
             `<p>Tom Brady is the most decorated quarterback in NFL history, with a record 7 Super Bowl championships — the highest achievement in American team sports.</p><p>Beyond athletics, he built a multi-hundred-million-dollar personal brand and business empire, including the TB12 wellness platform and strategic investments in major companies.</p><p>Proximity to someone who has consistently delivered world-class results across two decades at the absolute highest level offers powerful insight into sustained high performance and brand building at scale.</p>`,
-            `<p>Francie is a key connector and strategist who curates high-caliber events bringing together billionaires, entrepreneurs, and ambitious business owners.</p><p>We collaborate on multiple events focused on lead generation, deal flow, and strategic marketing. My role involves coordinating the right rooms and ensuring participants walk away with meaningful opportunities and relationships.</p><p>These environments have given me direct insight into what it takes to create real value at the highest levels of business and entrepreneurship.</p>`
+            `<p>Francie is CEO of JT Foxx’s companies and brands — she runs that ecosystem.</p><p>We work in those rooms together: owners, operators, and the standard JT Foxx businesses are held to.</p><p>That is the level I take into Exit-Ready work with service-business owners.</p>`
         ],
         readStory: "Read story →",
         moreMoments: "More moments from high-authority rooms available upon request.",
@@ -662,7 +662,7 @@ const translations = {
             "Con Reggie Batts — colaboración en consultoría y eventos",
             "Con Joe Foster, cofundador de Reebok",
             "Junto a Tom Brady en Melbourne",
-            "Con Francie en eventos de alto nivel para multimillonarios, emprendedores y dueños de negocio"
+            "Con Francie, CEO de las empresas y marcas de JT Foxx"
         ],
         roomStories: [
             `<p>JT Foxx es uno de los emprendedores globales y líderes de masterminds más reconocidos — construye plataformas donde dueños serios se conectan, levantan capital y escalan a siete y ocho cifras.</p><p>Trabajamos en las mismas salas de alto nivel y seguimos colaborando. Su posicionamiento, red y ejecución marcan el estándar de lo que es el emprendimiento serio — y ese estándar moldea cómo apoyo a dueños de negocios de servicios ambiciosos.</p><p>Hay más trabajo conjunto por delante.</p>`,
@@ -671,7 +671,7 @@ const translations = {
             `<p>Reggie Batts es un colaborador de alto nivel con quien trabajo como par en consultoría y eventos.</p><p>Apoyo a Reggie con consultoría y trabajo de eventos — y ha sido abiertamente agradecido por esa contribución. Operamos como iguales: creando salas, valor y resultados reales para personas serias en los negocios.</p><p>Ese tipo de colaboración entre pares es el estándar que llevo a cada engagement.</p>`,
             `<p>Joe Foster cofundó Reebok y la escaló desde una pequeña empresa británica hasta una de las marcas deportivas líderes a nivel mundial.</p><p>La marca alcanzó miles de millones en ingresos y fue adquirida en una transacción multimillonaria.</p><p>Sentarse con quien ayudó a construir ese éxito comercial global da una perspectiva rara sobre negocios de gran escala.</p>`,
             `<p>Tom Brady es el quarterback más condecorado en la historia de la NFL, con 7 Super Bowls.</p><p>Más allá del deporte, construyó un imperio de marca y negocios de cientos de millones de dólares.</p><p>La cercanía a alguien que entrega resultados de clase mundial durante décadas ofrece una visión poderosa del alto rendimiento sostenido.</p>`,
-            `<p>Francie es una conectora y estratega clave que cura eventos de alto calibre con multimillonarios, emprendedores y dueños ambiciosos.</p><p>Colaboramos en múltiples eventos de lead generation, deal flow y marketing estratégico.</p><p>Estos entornos dan una visión directa de cómo crear valor real en los niveles más altos del negocio.</p>`
+            `<p>Francie es CEO de las empresas y marcas de JT Foxx — dirige ese ecosistema.</p><p>Trabajamos juntas en esas salas: dueños, operadores y el estándar de los negocios JT Foxx.</p><p>Ese es el nivel que llevo al trabajo Exit-Ready con dueños de negocios de servicios.</p>`
         ],
         readStory: "Leer historia →",
         moreMoments: "Más momentos de salas de alto nivel disponibles a solicitud.",
@@ -856,7 +856,7 @@ const translations = {
             "Avec Reggie Batts — collaboration conseil et événements",
             "Avec Joe Foster, cofondateur de Reebok",
             "Aux côtés de Tom Brady à Melbourne",
-            "Avec Francie lors d'événements de haut niveau pour milliardaires, entrepreneurs et dirigeants"
+            "Avec Francie, CEO des entreprises et marques JT Foxx"
         ],
         roomStories: [
             `<p>JT Foxx est l'un des entrepreneurs mondiaux et leaders de masterminds les plus reconnus — il construit des plateformes où des propriétaires sérieux se connectent, lèvent des capitaux et passent à sept et huit chiffres.</p><p>Nous travaillons dans les mêmes salles de haut niveau et continuons de collaborer. Son positionnement, son réseau et son exécution fixent le standard de l'entrepreneuriat sérieux — et ce standard façonne la façon dont j'accompagne les propriétaires de services ambitieux.</p><p>D'autres collaborations sont à venir.</p>`,
@@ -865,7 +865,7 @@ const translations = {
             `<p>Reggie Batts est un collaborateur de haut niveau avec qui je travaille en pair sur le conseil et les événements.</p><p>Je soutiens Reggie en conseil et sur les événements — et il a exprimé sa reconnaissance pour cette contribution. Nous opérons en égaux : créer des salles, de la valeur et des résultats concrets pour des acteurs sérieux.</p><p>Ce type de collaboration entre pairs est le standard que j'apporte à chaque engagement.</p>`,
             `<p>Joe Foster a cofondé Reebok et l'a développée d'une petite entreprise britannique en l'une des principales marques sportives mondiales.</p><p>La marque a atteint des milliards de revenus et a été acquise dans une transaction multimilliardaire.</p><p>S'asseoir avec l'homme qui a aidé à construire ce succès commercial mondial offre une perspective rare sur les entreprises à grande échelle.</p>`,
             `<p>Tom Brady est le quarterback le plus décoré de l'histoire de la NFL, avec 7 Super Bowls.</p><p>Au-delà du sport, il a bâti un empire de marque et d'affaires de plusieurs centaines de millions de dollars.</p><p>La proximité d'une performance de classe mondiale sur deux décennies offre un aperçu puissant de la haute performance durable.</p>`,
-            `<p>Francie est une connectrice et stratège clé qui organise des événements de haut calibre pour milliardaires, entrepreneurs et dirigeants ambitieux.</p><p>Nous collaborons sur plusieurs événements de lead generation, deal flow et marketing stratégique.</p><p>Ces environnements donnent une vision directe de la création de valeur réelle au plus haut niveau.</p>`
+            `<p>Francie est CEO des entreprises et marques JT Foxx — elle dirige cet écosystème.</p><p>Nous travaillons dans ces salles : propriétaires, opérateurs, et le standard des affaires JT Foxx.</p><p>C’est le niveau que j’apporte au travail Exit-Ready avec les propriétaires d’entreprises de services.</p>`
         ],
         readStory: "Lire l'histoire →",
         moreMoments: "D'autres moments de salles à haute autorité disponibles sur demande.",
@@ -1181,7 +1181,7 @@ const translations = {
             "S Reggie Battsem — spolupráce na konzultacích a eventech",
             "S Joe Fosterem, spoluzakladatelem Reeboku",
             "Po boku Toma Bradyho v Melbourne",
-            "S Francií na high-level eventech pro miliardáře, podnikatele a majitele firem"
+            "S Francií, CEO společností a značek JT Foxx"
         ],
         roomStories: [
             `<p>JT Foxx je jedním z nejuznávanějších globálních podnikatelů a leaderů mastermindů — buduje platformy, kde se seriózní majitelé firem propojují, získávají kapitál a škálují na sedm a osm číslic.</p><p>Pracujeme ve stejných high-level místnostech a pokračujeme ve spolupráci. Jeho pozice, síť a exekuce nastavují standard seriózního podnikání — a ten standard formuje, jak podporuji ambiciózní majitele servisních firem.</p><p>Další společná práce je před námi.</p>`,
@@ -1190,7 +1190,7 @@ const translations = {
             `<p>Reggie Batts je high-level spolupracovník, se kterým pracuji jako peer na konzultacích a eventech.</p><p>Podporuji Reggieho konzultacemi a eventovou prací — a on za to otevřeně vyjádřil vděčnost. Fungujeme jako rovní: tvoříme místnosti, hodnotu a reálné výsledky pro seriózní lidi v byznysu.</p><p>Tento typ peer spolupráce je standard, který přináším do každé spolupráce.</p>`,
             `<p>Joe Foster spoluzaložil Reebok a rozšířil ji z malé britské firmy na jednu z předních globálních atletických značek.</p><p>Značka dosáhla miliard v příjmech a byla získána v multi-miliardové transakci.</p><p>Sedět s mužem, který pomohl vybudovat takový globální komerční úspěch, dává vzácnou perspektivu na velké byznysy.</p>`,
             `<p>Tom Brady je nejoceňovanější quarterback v historii NFL se 7 Super Bowly.</p><p>Mimo sport vybudoval brand a byznys impérium v hodnotě stovek milionů dolarů.</p><p>Blízkost k někomu, kdo dvě desetiletí dodává výsledky světové třídy, dává silný vhled do udržitelného high performance.</p>`,
-            `<p>Francie je klíčová connectorka a stratégyně, která vytváří high-caliber eventy pro miliardáře, podnikatele a ambiciózní majitele.</p><p>Spolupracujeme na více eventech zaměřených na lead generation, deal flow a strategický marketing.</p><p>Tato prostředí dávají přímý vhled do toho, jak tvořit reálnou hodnotu na nejvyšších úrovních byznysu.</p>`
+            `<p>Francie je CEO společností a značek JT Foxx — řídí ten ekosystém.</p><p>Pracujeme v těch místnostech: majitelé, operátoři a standard, který JT Foxx byznys drží.</p><p>To je úroveň, kterou přináším do Exit-Ready práce s majiteli servisních firem.</p>`
         ],
         readStory: "Přečíst příběh →",
         moreMoments: "Další momenty z místností s vysokou autoritou k dispozici na vyžádání.",
@@ -1348,12 +1348,12 @@ const roomStories = [
         `
     },
     {
-        title: "With Francie at high-level events coordinating billionaires, entrepreneurs & business owners",
+        title: "With Francie, CEO of JT Foxx companies and brands",
         image: "assets/francie-events-v2.jpg",
         story: `
-            <p>Francie is a key connector and strategist who curates high-caliber events bringing together billionaires, entrepreneurs, and ambitious business owners.</p>
-            <p>We collaborate on multiple events focused on lead generation, deal flow, and strategic marketing. My role involves coordinating the right rooms and ensuring participants walk away with meaningful opportunities and relationships.</p>
-            <p>These environments have given me direct insight into what it takes to create real value at the highest levels of business and entrepreneurship.</p>
+            <p>Francie is CEO of JT Foxx’s companies and brands — she runs that ecosystem.</p>
+            <p>We work in those rooms together: owners, operators, and the standard JT Foxx businesses are held to.</p>
+            <p>That is the level I take into Exit-Ready work with service-business owners.</p>
         `
     }
 ];

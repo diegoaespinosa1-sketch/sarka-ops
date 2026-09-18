@@ -43,11 +43,12 @@ nav {
   image-orientation: none;
 }
 
-/* Hero + About portrait — same crop language */
+/* Hero + About portrait — baked upright JPEG; crop face, not the painting */
 header img[src*="profile-sarka"],
 #about img[src*="profile-sarka"] {
   object-fit: cover;
-  image-orientation: none;
+  object-position: 58% 28%;
+  image-orientation: from-image;
 }
 
 /* Testimonial proof thumbs — square crop, no EXIF flip */
