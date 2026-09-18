@@ -43,9 +43,10 @@ nav {
   image-orientation: none;
 }
 
-/* Hero + About portrait — baked upright JPEG; crop face, not the painting */
+/* Portrait — baked upright JPEG; crop face, not the painting (hero, About, article avatars) */
 header img[src*="profile-sarka"],
-#about img[src*="profile-sarka"] {
+#about img[src*="profile-sarka"],
+img[src*="profile-sarka"] {
   object-fit: cover;
   object-position: 58% 28%;
   image-orientation: from-image;

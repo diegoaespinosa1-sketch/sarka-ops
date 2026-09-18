@@ -41,6 +41,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sarka-ops.com/insights/the-business-only-works-when-you-are-in-the-room/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarka-ops.com/insights/no-second-line-of-leadership-no-exit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarka-ops.com/insights/when-numbers-and-ops-dont-tell-the-same-story/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sarka-ops.com/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
