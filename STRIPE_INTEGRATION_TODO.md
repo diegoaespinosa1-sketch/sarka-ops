@@ -18,7 +18,7 @@ The following values are placeholders and must be updated before going live.
 | Field | Current Value | What to Set |
 |-------|--------------|-------------|
 | `mode` | `payment` | Keep **`payment`** for this one-time consult. |
-| `line_items[].price` | `price_...` | Create a one-time **Price** in Stripe for **$297 AUD**, then paste the Price ID (`price_…`). https://dashboard.stripe.com/prices |
+| `line_items[].price` | `price_1UE0cAC0E7c7eZEZy3vGcU0D` | Wired 2026-09-18. One-time $297 AUD Strategy Consult. |
 
 ## Configured Parameters
 
@@ -60,7 +60,7 @@ Never commit secrets. Template: [.env.example](.env.example).
 1. Stripe Dashboard → Products → Add product  
 2. Name: **Strategy Consult — Sarka Espinosa**  
 3. Price: **297.00 AUD**, one-time  
-4. Copy **Price ID** → replace `price_...` in `create-checkout-session.js`  
+4. Price ID wired: `price_1UE0cAC0E7c7eZEZy3vGcU0D`  
 5. Commit + push  
 
 ### 3. Deploy
@@ -107,8 +107,8 @@ Any “Book — $297” CTA
 ### 7. Checklist
 
 - [ ] Set `STRIPE_SECRET_KEY` + `STRIPE_PUBLISHABLE_KEY` in Netlify  
-- [ ] Replace `price_...` with real Price ID  
-- [ ] Push / redeploy  
+- [x] Replace `price_...` with `price_1UE0cAC0E7c7eZEZy3vGcU0D`  
+- [ ] Push / redeploy  (do after env keys exist)  
 - [ ] Test payment → thank-you → Calendly  
 - [ ] Switch to **live** keys when ready  
 - [ ] Optional: webhook `checkout.session.completed` for email alerts  

@@ -37,7 +37,6 @@ exports.handler = async (event) => {
   const domain = process.env.URL || process.env.DEPLOY_PRIME_URL || "https://sarka-ops.com";
 
   try {
-    // mode + line_items are sample_only — replace price ID in STRIPE_INTEGRATION_TODO.md
     const mode = "payment";
 
     const sessionParams = {
@@ -48,8 +47,7 @@ exports.handler = async (event) => {
       automatic_tax: { enabled: false },
       submit_type: "auto",
       integration_identifier: "custom_embedded_web_0001",
-      // TODO: replace price_... with your real Stripe Price ID (AUD $297 Strategy Consult)
-      line_items: [{ price: "price_...", quantity: 1 }],
+      line_items: [{ price: "price_1UE0cAC0E7c7eZEZy3vGcU0D", quantity: 1 }],
       return_url: `${domain}/thank-you.html?checkout=success`,
     };
 
