@@ -1,13 +1,23 @@
 [build]
+  # Static HTML + two functions. `true` is a no-op so a UI "Next.js" build
+  # command cannot win. Do not use `npm install` / `next build` here.
+  command = "true"
   publish = "."
   functions = "netlify/functions"
-  command = "npm install"
 
 [build.environment]
   NODE_VERSION = "18"
-  # Static HTML site — force Next.js runtime/plugin OFF (UI may still show it until removed)
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NEXT_PLUGIN_FORCE_RUN = "false"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["stripe"]
+
+[dev]
+  framework = "#static"
+  publish = "."
 
 [[redirects]]
   from = "/api/create-checkout-session"

@@ -1,74 +1,63 @@
 # Ship checklist — Sarka Ops site
 
-## Push status: FIXED
+**Website folder (do not rename):** `/Users/diegoespinosa/Sites/sarka-consulting`  
+**GitHub remote name (not a local folder):** `diegoaespinosa1-sketch/sarka-ops`  
+**HQ folder (do not touch this packet):** `/Users/diegoespinosa/sarka-ops`
 
-Local `main` matches GitHub `origin/main` (`c32ed62`).  
-`git push` returns **Everything up-to-date**.
-
-You do **not** need to push again until you make new commits.
-
----
-
-## What’s still broken
-
-Live **https://sarka-ops.com** is an **old** deploy:
-
-- Homepage still shows 6 services (“Operations Built to Sell”)
-- `/book/` → 404
-- `/resources/7-exit-killers/` → 404
-
-**Cause:** Netlify build succeeds, then **Essential Next.js** plugin fails → new deploy never publishes.
+Checked 2026-09-18: live https://sarka-ops.com still shows six services. `/book/` and `/resources/7-exit-killers/` 404. GitHub already has the three-engagement homepage.
 
 ---
 
-## Steps (do in order)
+## Status
 
-### 1. Stripe security (if not done)
+| Layer | State |
+|-------|--------|
+| Local files | Three engagements in `index.html` |
+| Folders | Unchanged. No rename / merge / delete. |
+| GitHub `origin/main` | Was `012436a`. New local commit waits for your **push yes**. |
+| Live sarka-ops.com | **Old.** Next.js runtime/plugin still blocking publish. |
 
-1. Stripe → Developers → API keys  
-2. **Roll** any `sk_live_…` that was pasted in chat  
-3. Do **not** paste the new secret in chat or git  
+Do **not** zip-upload the home folder.
 
-### 2. Fix Netlify (this unblocks the site)
+---
 
-1. Open https://app.netlify.com/projects/sarka-ops/configuration/deploys  
-2. Under **Build & deploy**:
-   - **Build plugins** → Essential Next.js → **Disable**, **or**
-   - **Build settings** → **Runtime** → Next.js → **Remove**
-3. **Deploys** → **Trigger deploy** → **Clear cache and deploy site**
-4. Wait until status is **Published** (no `@netlify/plugin-nextjs` error)
+## 1. Local (this session)
 
-### 3. Verify live
+`netlify.toml` no longer runs `npm install`. Build command is `true` (no-op) so a UI Next.js command cannot win. Plugin skip env vars kept.
 
-Open these (hard-refresh / Incognito):
+**Waiting on you:** yes to **git push** of this commit only. Agent will not push without that.
+
+---
+
+## 2. Netlify UI (after push) — one click at a time
+
+Open the project whose domain is **sarka-ops.com** (UI name may be `sarka-ops` or `sarkaops`).
+
+1. Project configuration → **Build & deploy**
+2. **Runtime** → if Next.js → **Remove**
+3. **Build plugins** → Essential Next.js → **Disable**
+4. Build settings: publish `.` · command empty or `true` · not Next
+5. Deploys → **Trigger deploy** → **Clear cache and deploy site**
+6. Wait for **Published** with no `@netlify/plugin-nextjs` error
+
+---
+
+## 3. Verify live (incognito)
 
 | URL | Expect |
 |-----|--------|
 | https://sarka-ops.com/ | “Three engagements” / Real Feedback near top |
-| https://sarka-ops.com/book/ | Not 404 (checkout or “payments activating”) |
+| https://sarka-ops.com/book/ | Not 404 |
 | https://sarka-ops.com/resources/7-exit-killers/ | Checklist page |
 
-### 4. Stripe payments (after site is live)
+---
 
-Netlify → Environment variables:
+## 4. Stripe (after pages exist)
 
-- `STRIPE_SECRET_KEY` = new secret (UI only)
-- `STRIPE_PUBLISHABLE_KEY` = matching `pk_…`
-
-Then create $297 AUD Price → send only the `price_…` ID to wire `/book/`.
+Roll any `sk_live_…` pasted in the old chat. Set keys in Netlify UI only. Then `$297 AUD` Price ID.
 
 ---
 
-## Correct folder (never zip home)
+## Fallback
 
-```text
-/Users/diegoespinosa/Sites/sarka-consulting
-```
-
----
-
-## Why push failed earlier (for the record)
-
-This chat agent often has **no GitHub login prompt**.  
-That is fixed for now: latest commits are on GitHub.  
-Remaining work is **Netlify publish**, not push.
+Same GitHub repo, **new** Netlify project, framework None. Preview must show three engagements before you move the domain. Do not rebuild HTML. Do not rename local folders.
