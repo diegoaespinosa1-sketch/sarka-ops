@@ -31,16 +31,16 @@ nav {
   box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.12), 0 20px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
-/* In the Room — fixed 4:5 frames; ignore EXIF re-orient (laptop/desktop) */
+/* In the Room — fixed 4:5 frames; honour EXIF so phone photos stay upright */
 #in-the-room .aspect-\[4\/5\] img {
   object-fit: cover;
-  image-orientation: none;
+  image-orientation: from-image;
 }
 
 #room-story-image {
   object-fit: contain;
   object-position: center;
-  image-orientation: none;
+  image-orientation: from-image;
 }
 
 /* Portrait — baked upright JPEG; crop face, not the painting (hero, About, article avatars) */
