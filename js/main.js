@@ -1349,7 +1349,7 @@ const roomStories = [
     },
     {
         title: "With Francie, CEO of JT Foxx companies and brands",
-        image: "assets/francie-events-v4.jpg?v=20261006",
+        image: "assets/francie-events-v5.jpg?v=20261006b",
         story: `
             <p>Francie is CEO of JT Foxx’s companies and brands — she runs that ecosystem.</p>
             <p>We work in those rooms together: owners, operators, and the standard JT Foxx businesses are held to.</p>
