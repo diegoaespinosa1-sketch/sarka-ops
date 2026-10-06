@@ -330,3 +330,13 @@ input:focus, textarea:focus {
     min-height: 44px;
   }
 }
+
+/* Francie: baked asset still paints sideways in browser — force upright */
+#in-the-room img.francie-orient {
+  transform: rotate(90deg) scale(1.34);
+  transform-origin: center center;
+}
+#room-story-image[src*="francie-events"] {
+  transform: rotate(90deg) scale(1.15);
+  transform-origin: center center;
+}
