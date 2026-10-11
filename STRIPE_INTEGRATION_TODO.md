@@ -1,6 +1,6 @@
 # Stripe Integration TODO
 
-Single source of truth for finishing the **$297 AUD Strategy Consult** checkout (embedded Checkout Form on `/book/`).
+Single source of truth for finishing the **$297 AUD Strategy Consult** checkout (hosted Stripe Checkout redirect from `/book/`).
 
 ## Security
 

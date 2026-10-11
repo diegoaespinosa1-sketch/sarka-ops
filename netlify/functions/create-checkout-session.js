@@ -1,13 +1,10 @@
 /**
- * Creates a Stripe Checkout Session (ui_mode: form) for the $297 strategy consult.
- * Returns { client_secret } for the embedded Checkout Form SDK.
+ * Creates a Stripe Checkout Session (hosted) for the $297 strategy consult.
+ * Returns { url } — client redirects to Stripe Checkout.
  */
 const Stripe = require("stripe");
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  // Required for Checkout Form (dahlia) preview per Stripe Checkout Studio
-  apiVersion: "2026-03-25.dahlia; custom_checkout_payment_form_preview=v1",
-});
+const STRATEGY_CONSULT_PRICE_ID = "price_1UE0cAC0E7c7eZEZy3vGcU0D";
 
 exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") {
@@ -34,26 +31,19 @@ exports.handler = async (event) => {
     };
   }
 
-  const domain = process.env.URL || process.env.DEPLOY_PRIME_URL || "https://sarka-ops.com";
+  const domain =
+    process.env.URL || process.env.DEPLOY_PRIME_URL || "https://sarka-ops.com";
 
   try {
-    const mode = "payment";
+    // Price is fixed server-side — do not trust a client-supplied priceId.
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
-    const sessionParams = {
-      ui_mode: "form",
-      mode,
-      billing_address_collection: "auto",
-      phone_number_collection: { enabled: false },
-      automatic_tax: { enabled: false },
-      submit_type: "auto",
-      integration_identifier: "custom_embedded_web_0001",
-      line_items: [{ price: "price_1UE0cAC0E7c7eZEZy3vGcU0D", quantity: 1 }],
-      return_url: `${domain}/thank-you.html?checkout=success`,
-    };
-
-    // payment_method_collection only applies to subscription mode (Stripe rule)
-
-    const session = await stripe.checkout.sessions.create(sessionParams);
+    const session = await stripe.checkout.sessions.create({
+      mode: "payment",
+      line_items: [{ price: STRATEGY_CONSULT_PRICE_ID, quantity: 1 }],
+      success_url: `${domain}/thank-you.html?checkout=success`,
+      cancel_url: `${domain}/book/`,
+    });
 
     return {
       statusCode: 200,
@@ -61,17 +51,17 @@ exports.handler = async (event) => {
         ...corsHeaders(),
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ client_secret: session.client_secret }),
+      body: JSON.stringify({ url: session.url }),
     };
-  } catch (err) {
-    console.error("Checkout session error:", err.message);
+  } catch (error) {
+    console.error("Checkout session error:", error.message);
     return {
       statusCode: 500,
       headers: {
         ...corsHeaders(),
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ error: err.message }),
+      body: JSON.stringify({ error: error.message }),
     };
   }
 };
