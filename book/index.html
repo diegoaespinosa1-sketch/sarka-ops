@@ -45,58 +45,51 @@
     </main>
 
     <script>
-(async function () {
+(function () {
   const statusEl = document.getElementById('checkout-status');
   const errorEl = document.getElementById('checkout-error');
   const payBtn = document.getElementById('pay-button');
+  // Real Strategy Consult price — server allowlists this ID only.
+  const PRICE_ID = 'price_1UE0cAC0E7c7eZEZy3vGcU0D';
 
-  try {
-    const configRes = await fetch('/api/stripe-config');
-    const config = await configRes.json();
+  statusEl.textContent = 'Ready. You will be redirected to Stripe Checkout.';
 
-    if (!config.configured || !config.publishableKey) {
-      statusEl.innerHTML = '';
-      document.getElementById('checkout-form').innerHTML =
-        '<div class="rounded-xl border border-amber-200 bg-amber-50 px-5 py-6 text-slate-800">' +
-        '<p class="font-semibold text-slate-900">Payments are being activated</p>' +
-        '<p class="mt-2 text-sm text-slate-600 leading-relaxed">Stripe checkout for the $297 strategy consult is almost ready. In the meantime, email <a class="text-teal-700 font-semibold underline" href="mailto:sarka@sarka-ops.com?subject=Strategy%20Consult%20%24297">sarka@sarka-ops.com</a> with “Strategy Consult” in the subject and we will confirm next steps.</p>' +
-        '</div>';
-      return;
-    }
-
-    statusEl.textContent = 'Ready. You will be redirected to Stripe Checkout.';
-
-    payBtn.addEventListener('click', async () => {
-      payBtn.disabled = true;
-      statusEl.textContent = 'Opening Stripe Checkout…';
-      errorEl.classList.add('hidden');
-
-      try {
-        const response = await fetch('/api/create-checkout-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({}),
-        });
-        const json = await response.json();
-        if (!response.ok || !json.url) {
-          throw new Error(json.error || 'Could not start checkout');
-        }
-        window.location.href = json.url;
-      } catch (err) {
-        console.error(err);
-        errorEl.textContent = err.message || 'Checkout failed. Please try again.';
-        errorEl.classList.remove('hidden');
-        statusEl.textContent = 'Payment could not be started.';
-        payBtn.disabled = false;
-      }
-    });
-  } catch (err) {
-    console.error(err);
-    statusEl.textContent = '';
-    errorEl.textContent = err.message || 'Checkout failed to load.';
-    errorEl.classList.remove('hidden');
+  payBtn.addEventListener('click', async () => {
     payBtn.disabled = true;
-  }
+    statusEl.textContent = 'Opening Stripe Checkout…';
+    errorEl.classList.add('hidden');
+
+    try {
+      const response = await fetch('/.netlify/functions/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId: PRICE_ID }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data.url) {
+        throw new Error(data.error || 'Could not start checkout');
+      }
+
+      window.location.href = data.url; // Redirects user to Stripe Checkout
+    } catch (err) {
+      console.error(err);
+      const msg = err.message || 'Checkout failed. Please try again.';
+      if (msg.includes('STRIPE_SECRET_KEY')) {
+        document.getElementById('checkout-form').innerHTML =
+          '<div class="rounded-xl border border-amber-200 bg-amber-50 px-5 py-6 text-slate-800">' +
+          '<p class="font-semibold text-slate-900">Payments are being activated</p>' +
+          '<p class="mt-2 text-sm text-slate-600 leading-relaxed">Stripe checkout for the $297 strategy consult is almost ready. In the meantime, email <a class="text-teal-700 font-semibold underline" href="mailto:sarka@sarka-ops.com?subject=Strategy%20Consult%20%24297">sarka@sarka-ops.com</a> with “Strategy Consult” in the subject and we will confirm next steps.</p>' +
+          '</div>';
+        statusEl.textContent = '';
+        return;
+      }
+      errorEl.textContent = msg;
+      errorEl.classList.remove('hidden');
+      statusEl.textContent = 'Payment could not be started.';
+      payBtn.disabled = false;
+    }
+  });
 })();
     </script>
 </body>
