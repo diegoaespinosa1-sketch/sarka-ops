@@ -19,11 +19,15 @@ exports.handler = async (event) => {
     };
   }
 
-  if (!process.env.STRIPE_SECRET_KEY) {
+  // Prefer STRIPE_SECRET_KEY; accept APIKEY if that is how the secret was named in Netlify.
+  const secretKey = process.env.STRIPE_SECRET_KEY || process.env.APIKEY;
+  if (!secretKey) {
     return {
       statusCode: 500,
       headers: corsHeaders(),
-      body: JSON.stringify({ error: "STRIPE_SECRET_KEY is not configured" }),
+      body: JSON.stringify({
+        error: "STRIPE_SECRET_KEY is not configured (or APIKEY)",
+      }),
     };
   }
 
@@ -46,7 +50,7 @@ exports.handler = async (event) => {
       }
     }
 
-    const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+    const stripe = require("stripe")(secretKey);
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
